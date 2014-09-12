@@ -52,14 +52,14 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     {
         $argSets = $this->argSets;
 
-        $expected = 'growlnotify -m "This is a message"  "LOL OMG" --sticky';
-        $options = ['title' => 'LOL OMG', 'subtitle' => 'Sub-guy', 'sticky' => true];
-        $result = $this->Growl->buildCommand('This is a message', $argSets['Darwin-Growl'], $options);
+        $expected = 'growlnotify -m "This is a Darwin growl!"  "Hello Darwin Growl" --sticky';
+        $options = ['title' => 'Hello Darwin Growl', 'subtitle' => 'Unsuppored Subtitle', 'sticky' => true];
+        $result = $this->Growl->buildCommand('This is a Darwin growl!', $argSets['Darwin-Growl'], $options);
         $this->assertEquals($expected, $result);
 
-        $expected = 'growlnotify -m "This is a message"  "LOL OMG"';
-        $options = ['title' => 'LOL OMG', 'subtitle' => 'Sub-guy'];
-        $result = $this->Growl->buildCommand('This is a message', $argSets['Darwin-Growl'], $options);
+        $expected = 'growlnotify -m "This is a Darwin terminal notification with no sticky!"  "Hello Darwin Growl"';
+        $options = ['title' => 'Hello Darwin Growl', 'subtitle' => 'Unsuppored Subtitle'];
+        $result = $this->Growl->buildCommand('This is a Darwin terminal notification with no sticky!', $argSets['Darwin-Growl'], $options);
         $this->assertEquals($expected, $result);
     }
 
@@ -67,9 +67,29 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     {
         $argSets = $this->argSets;
 
-        $expected = 'terminal-notifier -message "This is a message" -title "LOL OMG" -subtitle "Sub-guy"';
-        $options = ['title' => 'LOL OMG', 'subtitle' => 'Sub-guy', 'sticky' => true];
-        $result = $this->Growl->buildCommand('This is a message', $argSets['Darwin-Notifier'], $options);
+        $expected = 'terminal-notifier -message "This is a Darwin terminal notification!" -title "Hello Darwin Terminal" -subtitle "Cool Subtitle"';
+        $options = ['title' => 'Hello Darwin Terminal', 'subtitle' => 'Cool Subtitle', 'sticky' => true];
+        $result = $this->Growl->buildCommand('This is a Darwin terminal notification!', $argSets['Darwin-Notifier'], $options);
         $this->assertEquals($expected, $result);
+    }
+
+    public function testLinuxNotify()
+    {
+        $argSets = $this->argSets;
+
+        $expected = 'notify-send "Hello Darwin Terminal" "This is a Linux notification!"';
+        $options = ['title' => 'Hello Darwin Terminal'];
+        $result = $this->Growl->buildCommand('This is a Linux notification!', $argSets['Linux-Notify'], $options);
+        $this->assertEquals($expected, $result);
+
+        $expected = 'notify-send "Hello Darwin Terminal" "This is a Linux notification!" -t 0';
+        $options = ['title' => 'Hello Darwin Terminal', 'subtitle' => 'Cool Subtitle', 'sticky' => true];
+        $result = $this->Growl->buildCommand('This is a Linux notification!', $argSets['Linux-Notify'], $options);
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testWindowsGrowl()
+    {
+        $argSets = $this->argSets;
     }
 }

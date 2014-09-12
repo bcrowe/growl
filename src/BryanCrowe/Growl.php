@@ -43,6 +43,11 @@ class Growl
     {
         $command = [$args['pkg']];
 
+        if ($args['type'] === 'Linux-Notify') {
+            $options['title'] = $this->quotify($options['title']);
+            array_push($command, $options['title']);
+        }
+
         if ($args['type'] !== 'Windows-Growl') {
             if ($message && $args['msg']) {
                 $message = $this->quotify($message);
@@ -53,7 +58,7 @@ class Growl
             }
         }
 
-        if (isset($options['title'])) {
+        if (isset($options['title']) && isset($args['title'])) {
             $options['title'] = $this->quotify($options['title']);
 
             if ($args['type'] === 'Windows-Growl') {
