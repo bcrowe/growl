@@ -25,17 +25,21 @@ class Growl
         $command = [$args['pkg']];
 
         if ($message && $args['msg']) {
-            array_push($command, $args['msg'], '"' . $message . '"');
+            $message = $this->quotify($message);
+            array_push($command, $args['msg'], $message);
         } else {
-            array_push($command, '"' . $message. '"');
+             $this->quotify($message);
+            array_push($command, $message);
         }
 
         if (isset($options['title'])) {
-            array_push($command, $args['title'], '"' . $options['title'] . '"');
+            $options['title'] = $this->quotify($options['title']);
+            array_push($command, $args['title'], $options['title']);
         }
 
         if (isset($options['subtitle']) && isset($args['subtitle'])) {
-            array_push($command, $args['subtitle'], '"' . $options['subtitle'] . '"');
+            $options['subtitle'] = $this->quotify($options['subtitle']);
+            array_push($command, $args['subtitle'], $options['subtitle']);
         }
 
         if (isset($options['sticky']) && isset($args['sticky'])) {
@@ -95,5 +99,10 @@ class Growl
                 ];
             break;
         }
+    }
+
+    public function quotify($string)
+    {
+        return '"' . $string . '"';
     }
 }
