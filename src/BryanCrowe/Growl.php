@@ -13,28 +13,33 @@ class Growl
             case 'Darwin':
                 if (exec('which growlnotify')) {
                     $command = [
-                        'pkg' => 'growlnotify'
+                        'pkg' => 'growlnotify',
+                        'msg' => '-m'
                     ];
                 } else {
                     $command = [
-                        'pkg' => 'terminal-notifier'
+                        'pkg' => 'terminal-notifier',
+                        'msg' => '-message'
                     ];
                 }
             break;
             case 'Linux':
                 if (exec('which growl')) {
                     $command = [
-                        'pkg' => 'growl'
+                        'pkg' => 'growl',
+                        'msg' => '-m'
                     ];
                 } else {
                     $command = [
-                        'pkg' => 'notify-send'
+                        'pkg' => 'notify-send',
+                        'msg' => ''
                     ];
                 }
             break;
             case 'WINNT':
                 $command = [
-                    'pkg' => 'growlnotify'
+                    'pkg' => 'growlnotify',
+                    'msg' => ''
                 ];
             break;
 
