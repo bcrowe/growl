@@ -43,7 +43,7 @@ class Growl
     {
         $command = [$args['pkg']];
 
-        if ($args['type'] !== 'Windows') {
+        if ($args['type'] !== 'Windows-Growl') {
             if ($message && $args['msg']) {
                 $message = $this->quotify($message);
                 array_push($command, $args['msg'], $message);
@@ -56,7 +56,7 @@ class Growl
         if (isset($options['title'])) {
             $options['title'] = $this->quotify($options['title']);
 
-            if ($args['type'] === 'Windows') {
+            if ($args['type'] === 'Windows-Growl') {
                 array_push($command, $args['title'] . $options['title']);
             } else {
                 array_push($command, $args['title'], $options['title']);
@@ -72,7 +72,7 @@ class Growl
             array_push($command, $args['sticky']);
         }
 
-        if ($args['type'] === 'Windows') {
+        if ($args['type'] === 'Windows-Growl') {
             $message = $this->quotify($message);
             array_push($command, $message);
         }
@@ -110,15 +110,7 @@ class Growl
                 }
             break;
             case 'Linux':
-                if (exec('which growl')) {
-                    return [
-                        'type' => 'Linux-Growl',
-                        'pkg' => 'growl',
-                        'msg' => '-m',
-                        'title' => '-title',
-                        'subtitle' => '-subtitle'
-                    ];
-                } elseif (exec('which notify-send')) {
+                if (exec('which notify-send')) {
                     return [
                         'type' => 'Linux-Notify',
                         'pkg' => 'notify-send',
@@ -130,7 +122,7 @@ class Growl
             case 'WINNT':
                 if (exec('where growlnotify')) {
                     return [
-                        'type' => 'Windows',
+                        'type' => 'Windows-Growl',
                         'pkg' => 'growlnotify',
                         'msg' => '',
                         'title' => '/t:',

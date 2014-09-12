@@ -23,21 +23,14 @@ class GrowlTest extends PHPUnit_Framework_TestCase
                 'title' => '-title',
                 'subtitle' => '-subtitle'
             ],
-            'Linux-Growl' => [
-                'type' => 'Linux-Growl',
-                'pkg' => 'growl',
-                'msg' => '-m',
-                'title' => '-title',
-                'subtitle' => '-subtitle'
-            ],
             'Linux-Notify' => [
                 'type' => 'Linux-Notify',
                 'pkg' => 'notify-send',
                 'msg' => '',
                 'sticky' => '-t 0'
             ],
-            'Windows' => [
-                'type' => 'Windows',
+            'Windows-Growl' => [
+                'type' => 'Windows-Growl',
                 'pkg' => 'growlnotify',
                 'msg' => '',
                 'title' => '/t:',
