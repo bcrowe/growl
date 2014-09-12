@@ -2,9 +2,67 @@
 
 Growl and Notification support for PHP.
 
+## Requirements
+
+* PHP >=5.3.0
+* OSX/Windows: Growl + growlnotify
+* OSX: terminal-notifier
+* Linux: notify-send
+
 ## Installation
 
+Add this package to your composer.json file:
+
+```composer
+  {
+    "require": {
+      ".../growl": "dev-master"
+    }
+  }
+```
+
 ## Usage
+
+Create a new instance of the Growl class:
+
+```php
+<?php
+$Growl = new BryanCrowe\Growl();
+?>
+```
+
+And use the `growl()` method to execute a growl:
+
+```php
+<?php
+$Growl->growl('This is my message.', [
+    'title' => 'Hello World'
+]);
+?>
+```
+
+The `growl()` method accepts two parameters, a `$message` string and a
+`$options` array.
+
+### Options
+
+There are a few of available options:
+
+* **title** The title of the growl/notification.
+* **subtitle** The subtitle of the growl/notification. (terminal-notifier only)
+* **sticky** Makes the growl stick until closed. (growlnotify and notify-send only)
+
+An example using all options:
+
+```php
+<?php
+$Growl->growl('This is my message.', [
+    'title' => 'Hello World',
+    'subtitle' => 'Earth',
+    'sticky' => true
+]);
+?>
+```
 
 ## License
 
