@@ -91,5 +91,10 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     public function testWindowsGrowlNotify()
     {
         $argSets = $this->argSets;
+
+        $expected = 'growlnotify /t:"Hello Windows Growl" /s:true "This is a Windows growl!"';
+        $options = ['title' => 'Hello Windows Growl', 'sticky' => true];
+        $result = $this->Growl->buildCommand('This is a Windows growl!', $argSets['Windows-Growl'], $options);
+        $this->assertEquals($expected, $result);
     }
 }
