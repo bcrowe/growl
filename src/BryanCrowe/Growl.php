@@ -17,27 +17,26 @@ class Growl
         $args = $this->createCommand();
         $command = [$args['pkg']];
 
-        if ($message) {
-            array_push($command, $args['msg'], $message);
+        if ($message && $args['msg']) {
+            array_push($command, $args['msg'], '"' . $message . '"');
+        } else {
+            array_push($command, '"' . $message. '"');
         }
 
         if (isset($options['title'])) {
-            array_push($command, $args['title'], $options['title']);
+            array_push($command, $args['title'], '"' . $options['title'] . '"');
         }
 
-        if (isset($options['sticky'])) {
+        if (isset($options['subtitle']) && isset($args['subtitle'])) {
+            array_push($command, $args['subtitle'], '"' . $options['subtitle'] . '"');
+        }
+
+        if (isset($options['sticky']) && isset($args['sticky'])) {
             array_push($command, $args['sticky']);
         }
 
         $command = implode(' ', $command);
-
         exec($command);
-
-        if ($args['type'] === 'Darwin-Growl') {}
-        if ($args['type'] === 'Darwin-Notifier') {}
-        if ($args['type'] === 'Linux-Growl') {}
-        if ($args['type'] === 'Linux-Notify') {}
-        if ($args['type'] === 'Windows') {}
     }
 
     public function createCommand()
@@ -49,6 +48,7 @@ class Growl
                         'type' => 'Darwin-Growl',
                         'pkg' => 'growlnotify',
                         'msg' => '-m',
+                        'title' => '',
                         'sticky' => '--sticky'
                     ];
                 } else {
