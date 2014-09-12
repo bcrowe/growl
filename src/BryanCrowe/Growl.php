@@ -1,6 +1,8 @@
 <?php
 namespace BryanCrowe;
 
+use RuntimeException;
+
 class Growl
 {
 
@@ -123,6 +125,8 @@ class Growl
                 }
             break;
         }
+
+        throw new RuntimeException('Could not find any notification packages.');
     }
 
     /**
