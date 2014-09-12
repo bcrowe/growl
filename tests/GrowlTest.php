@@ -13,4 +13,9 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     {
 
     }
+
+    public function testGrowl()
+    {
+        $this->assertTrue(true);
+    }
 }
