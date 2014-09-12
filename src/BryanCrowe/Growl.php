@@ -12,7 +12,8 @@ class Growl
      *  - sticky Make it sticky. Defaults to false
      *
      */
-    public function growl($message = null, $options = []) {
+    public function growl($message = null, $options = [])
+    {
         $args = $this->createCommand();
         if (PHP_OS === 'Darwin') {
         }
