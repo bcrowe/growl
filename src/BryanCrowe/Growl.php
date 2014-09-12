@@ -43,17 +43,24 @@ class Growl
     {
         $command = [$args['pkg']];
 
-        if ($message && $args['msg']) {
-            $message = $this->quotify($message);
-            array_push($command, $args['msg'], $message);
-        } else {
-            $message = $this->quotify($message);
-            array_push($command, $message);
+        if ($args['type'] !== 'Windows') {
+            if ($message && $args['msg']) {
+                $message = $this->quotify($message);
+                array_push($command, $args['msg'], $message);
+            } else {
+                $message = $this->quotify($message);
+                array_push($command, $message);
+            }
         }
 
         if (isset($options['title'])) {
             $options['title'] = $this->quotify($options['title']);
-            array_push($command, $args['title'], $options['title']);
+
+            if ($args['type'] === 'Windows') {
+                array_push($command, $args['title'] . $options['title']);
+            } else {
+                array_push($command, $args['title'], $options['title']);
+            }
         }
 
         if (isset($options['subtitle']) && isset($args['subtitle'])) {
@@ -63,6 +70,11 @@ class Growl
 
         if (isset($options['sticky']) && isset($args['sticky'])) {
             array_push($command, $args['sticky']);
+        }
+
+        if ($args['type'] === 'Windows') {
+            $message = $this->quotify($message);
+            array_push($command, $message);
         }
 
         return implode(' ', $command);
