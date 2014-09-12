@@ -3,7 +3,6 @@ namespace BryanCrowe;
 
 class Growl
 {
-    public function __construct() {}
 
     /**
      * Options:
@@ -20,7 +19,7 @@ class Growl
         exec($command);
     }
 
-    public function buildCommand($message = null, $args = [], $options = [])
+    protected function buildCommand($message = null, $args = [], $options = [])
     {
         $command = [$args['pkg']];
 
@@ -28,7 +27,7 @@ class Growl
             $message = $this->quotify($message);
             array_push($command, $args['msg'], $message);
         } else {
-             $this->quotify($message);
+            $this->quotify($message);
             array_push($command, $message);
         }
 
@@ -49,7 +48,7 @@ class Growl
         return implode(' ', $command);
     }
 
-    public function getArguments()
+    protected function getArguments()
     {
         switch (PHP_OS) {
             case 'Darwin':
@@ -101,7 +100,7 @@ class Growl
         }
     }
 
-    public function quotify($string)
+    protected function quotify($string)
     {
         return '"' . $string . '"';
     }
