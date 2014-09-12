@@ -14,7 +14,14 @@ class Growl
      */
     public function growl($message = null, $options = [])
     {
-        $args = $this->createCommand();
+        $args = $this->getArguments();
+        $command = $this->buildCommand($message, $args, $options);
+
+        exec($command);
+    }
+
+    public function buildCommand($message = null, $args = [], $options = [])
+    {
         $command = [$args['pkg']];
 
         if ($message && $args['msg']) {
@@ -35,11 +42,10 @@ class Growl
             array_push($command, $args['sticky']);
         }
 
-        $command = implode(' ', $command);
-        exec($command);
+        return implode(' ', $command);
     }
 
-    public function createCommand()
+    public function getArguments()
     {
         switch (PHP_OS) {
             case 'Darwin':
