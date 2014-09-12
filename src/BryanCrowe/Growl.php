@@ -11,13 +11,31 @@ class Growl
     {
         switch (PHP_OS) {
             case 'Darwin':
-                $command = [];
+                if (exec('which growlnotify')) {
+                    $command = [
+                        'pkg' => 'growlnotify'
+                    ];
+                } else {
+                    $command = [
+                        'pkg' => 'terminal-notifier'
+                    ];
+                }
             break;
             case 'Linux':
-                $command = [];
+                if (exec('which growl')) {
+                    $command = [
+                        'pkg' => 'growl'
+                    ];
+                } else {
+                    $command = [
+                        'pkg' => 'notify-send'
+                    ];
+                }
             break;
             case 'WINNT':
-                $command = [];
+                $command = [
+                    'pkg' => 'growlnotify'
+                ];
             break;
 
             return $command;
