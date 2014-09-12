@@ -48,7 +48,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         parent::tearDown();
     }
 
-    public function testDarwinGrowl()
+    public function testDarwinGrowlNotify()
     {
         $argSets = $this->argSets;
 
@@ -63,7 +63,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testTerminalNotifier()
+    public function testDarwninTerminalNotifier()
     {
         $argSets = $this->argSets;
 
@@ -73,7 +73,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testLinuxNotify()
+    public function testLinuxNotifySend()
     {
         $argSets = $this->argSets;
 
@@ -88,7 +88,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testWindowsGrowl()
+    public function testWindowsGrowlNotify()
     {
         $argSets = $this->argSets;
     }
