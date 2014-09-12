@@ -15,6 +15,23 @@ class Growl
     public function growl($message = null, $options = [])
     {
         $args = $this->createCommand();
+        $command = [$args['pkg']];
+
+        if ($message) {
+            array_push($command, $args['msg'], $message);
+        }
+
+        if (isset($options['title'])) {
+            array_push($command, $args['title'], $options['title']);
+        }
+
+        if (isset($options['sticky'])) {
+            array_push($command, $args['sticky']);
+        }
+
+        $command = implode(' ', $command);
+
+        exec($command);
 
         if ($args['type'] === 'Darwin-Growl') {}
         if ($args['type'] === 'Darwin-Notifier') {}
