@@ -18,7 +18,7 @@ class Growl
      *
      * @param string $message The message you want to display.
      * @param array $options Set values and flags.
-     * @return void
+     * @return string The command that was executed.
      */
     public function growl($message, $options = [])
     {
@@ -26,6 +26,8 @@ class Growl
         $command = $this->buildCommand($message, $args, $options);
 
         exec($command);
+
+        return $command;
     }
 
     /**
