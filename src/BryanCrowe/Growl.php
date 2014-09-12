@@ -5,7 +5,22 @@ class Growl
 {
     public function __construct() {}
 
-    public function growl($message = null, $options = []) {}
+    /**
+     * Options:
+     *  - title The title
+     *  - subtitle The subtitle
+     *  - sticky Make it sticky. Defaults to false
+     *
+     */
+    public function growl($message = null, $options = []) {
+        $args = $this->createCommand();
+        if (PHP_OS === 'Darwin') {
+        }
+        if (PHP_OS === 'Linux') {
+        }
+        if (PHP_OS === 'WINNT') {
+        }
+    }
 
     public function createCommand()
     {
