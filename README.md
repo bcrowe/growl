@@ -1,4 +1,6 @@
-# Growl / Notifications for PHP
+# Growl + Notifications for PHP
+
+Growl and Notification support for PHP.
 
 ## Installation
 
