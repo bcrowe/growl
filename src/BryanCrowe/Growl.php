@@ -5,13 +5,20 @@ class Growl
 {
 
     /**
-     * Options:
-     *  - title The title
-     *  - subtitle The subtitle
-     *  - sticky Make it sticky. Defaults to false
+     * Executes a growl/notification command.
      *
+     * Options:
+     *  - title: The title of the notification.
+     *  - subtitle: The subtile of the notification. Only for OSX
+     *    terminal-notifiter, and Growl on Linux.
+     *  - sticky: Set to any value to trigger the stick flag. Only for Growl on
+     *    OSX and Windows, and notify-send on Linux.
+     *
+     * @param string $message The message you want to display.
+     * @param array $options Set values and flags.
+     * @return void
      */
-    public function growl($message = null, $options = [])
+    public function growl($message, $options = [])
     {
         $args = $this->getArguments();
         $command = $this->buildCommand($message, $args, $options);
@@ -19,7 +26,16 @@ class Growl
         exec($command);
     }
 
-    protected function buildCommand($message = null, $args = [], $options = [])
+    /**
+     * Builds the command to be executed based on the available arguments and
+     * the options that were set in the options array.
+     *
+     * @param string $message The notification's message.
+     * @param array $args Command arguments available.
+     * @param array $options Options chosen/set by the user.
+     * @return string The fully-built command to be executed.
+     */
+    protected function buildCommand($message, $args = [], $options = [])
     {
         $command = [$args['pkg']];
 
@@ -48,6 +64,13 @@ class Growl
         return implode(' ', $command);
     }
 
+    /**
+     * Returns an array of arguments to be used in building the growl or
+     * notification command, determined by which OS is running and whether or
+     * not "growlnotify" is available.
+     *
+     * @return array
+     */
     protected function getArguments()
     {
         switch (PHP_OS) {
@@ -100,6 +123,11 @@ class Growl
         }
     }
 
+    /**
+     * Wraps strings in double quotations.
+     *
+     * @return string
+     */
     protected function quotify($string)
     {
         return '"' . $string . '"';
