@@ -43,7 +43,7 @@ class Growl
             $message = $this->quotify($message);
             array_push($command, $args['msg'], $message);
         } else {
-            $this->quotify($message);
+            $message = $this->quotify($message);
             array_push($command, $message);
         }
 
