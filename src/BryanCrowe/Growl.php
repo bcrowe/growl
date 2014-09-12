@@ -39,7 +39,7 @@ class Growl
      * @param array $options Options chosen/set by the user.
      * @return string The fully-built command to be executed.
      */
-    protected function buildCommand($message, $args = [], $options = [])
+    public function buildCommand($message, $args = [], $options = [])
     {
         $command = [$args['pkg']];
 
