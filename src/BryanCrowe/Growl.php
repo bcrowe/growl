@@ -14,12 +14,15 @@ class Growl
                 if (exec('which growlnotify')) {
                     return [
                         'pkg' => 'growlnotify',
-                        'msg' => '-m'
+                        'msg' => '-m',
+                        'sticky' => '--sticky'
                     ];
                 } else {
                     return [
                         'pkg' => 'terminal-notifier',
-                        'msg' => '-message'
+                        'msg' => '-message',
+                        'title' => '-title',
+                        'subtitle' => '-subtitle'
                     ];
                 }
             break;
@@ -27,19 +30,24 @@ class Growl
                 if (exec('which growl')) {
                     return [
                         'pkg' => 'growl',
-                        'msg' => '-m'
+                        'msg' => '-m',
+                        'title' => '-title',
+                        'subtitle' => '-subtitle'
                     ];
                 } else {
                     return [
                         'pkg' => 'notify-send',
-                        'msg' => ''
+                        'msg' => '',
+                        'sticky' => '-t 0'
                     ];
                 }
             break;
             case 'WINNT':
                 return [
                     'pkg' => 'growlnotify',
-                    'msg' => ''
+                    'msg' => '',
+                    'title' => '/t:',
+                    'sticky' => '/s:true'
                 ];
             break;
         }
