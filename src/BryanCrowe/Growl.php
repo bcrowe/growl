@@ -83,7 +83,7 @@ class Growl
                         'title' => '',
                         'sticky' => '--sticky'
                     ];
-                } else {
+                } elseif (exec('which terminal-notifier')) {
                     return [
                         'type' => 'Darwin-Notifier',
                         'pkg' => 'terminal-notifier',
@@ -102,7 +102,7 @@ class Growl
                         'title' => '-title',
                         'subtitle' => '-subtitle'
                     ];
-                } else {
+                } elseif (exec('which notify-send')) {
                     return [
                         'type' => 'Linux-Notify',
                         'pkg' => 'notify-send',
@@ -112,13 +112,15 @@ class Growl
                 }
             break;
             case 'WINNT':
-                return [
-                    'type' => 'Windows',
-                    'pkg' => 'growlnotify',
-                    'msg' => '',
-                    'title' => '/t:',
-                    'sticky' => '/s:true'
-                ];
+                if (exec('where growlnotify')) {
+                    return [
+                        'type' => 'Windows',
+                        'pkg' => 'growlnotify',
+                        'msg' => '',
+                        'title' => '/t:',
+                        'sticky' => '/s:true'
+                    ];
+                }
             break;
         }
     }
