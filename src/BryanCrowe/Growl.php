@@ -15,12 +15,12 @@ class Growl
     public function growl($message = null, $options = [])
     {
         $args = $this->createCommand();
-        if (PHP_OS === 'Darwin') {
-        }
-        if (PHP_OS === 'Linux') {
-        }
-        if (PHP_OS === 'WINNT') {
-        }
+
+        if ($args['type'] === 'Darwin-Growl') {}
+        if ($args['type'] === 'Darwin-Notifier') {}
+        if ($args['type'] === 'Linux-Growl') {}
+        if ($args['type'] === 'Linux-Notify') {}
+        if ($args['type'] === 'Windows') {}
     }
 
     public function createCommand()
