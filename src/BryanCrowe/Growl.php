@@ -29,12 +29,14 @@ class Growl
             case 'Darwin':
                 if (exec('which growlnotify')) {
                     return [
+                        'type' => 'Darwin-Growl',
                         'pkg' => 'growlnotify',
                         'msg' => '-m',
                         'sticky' => '--sticky'
                     ];
                 } else {
                     return [
+                        'type' => 'Darwin-Notifier',
                         'pkg' => 'terminal-notifier',
                         'msg' => '-message',
                         'title' => '-title',
@@ -45,6 +47,7 @@ class Growl
             case 'Linux':
                 if (exec('which growl')) {
                     return [
+                        'type' => 'Linux-Growl',
                         'pkg' => 'growl',
                         'msg' => '-m',
                         'title' => '-title',
@@ -52,6 +55,7 @@ class Growl
                     ];
                 } else {
                     return [
+                        'type' => 'Linux-Notify',
                         'pkg' => 'notify-send',
                         'msg' => '',
                         'sticky' => '-t 0'
@@ -60,6 +64,7 @@ class Growl
             break;
             case 'WINNT':
                 return [
+                    'type' => 'Windows',
                     'pkg' => 'growlnotify',
                     'msg' => '',
                     'title' => '/t:',
