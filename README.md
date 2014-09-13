@@ -16,7 +16,7 @@ Add this package to your composer.json file:
 ```composer
   {
     "require": {
-      ".../growl": "dev-master"
+      "bcrowe/growl": "dev-master"
     }
   }
 ```

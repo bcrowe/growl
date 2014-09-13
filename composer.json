@@ -1,5 +1,5 @@
 {
-    "name": ".../growl",
+    "name": "bcrowe/growl",
     "type": "library",
     "description": "A short description of what your package does",
     "keywords": ["php", "growl", "notifications"],
