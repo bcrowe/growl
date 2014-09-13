@@ -27,7 +27,7 @@ Create a new instance of the Growl class:
 
 ```php
 <?php
-$Growl = new BryanCrowe\Growl();
+$Growl = new \BryanCrowe\Growl();
 ?>
 ```
 
