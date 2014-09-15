@@ -11,7 +11,7 @@ class Growl
      *
      * Options:
      *  - title: The title of the notification.
-     *  - subtitle: The subtile of the notification. Only for OSX
+     *  - subtitle: The subtitle of the notification. Only for OSX
      *    terminal-notifiter, and Growl on Linux.
      *  - sticky: Set to any value to trigger the stick flag. Only for Growl on
      *    OSX and Windows, and notify-send on Linux.
