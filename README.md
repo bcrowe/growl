@@ -1,17 +1,34 @@
 # Growl + Notifications for PHP
 
-Growl and Notification support for PHP.
+Growl and notification support for PHP. Thanks to TJ Holowaychuk for inspiration
+with his [Ruby Growl](http://github.com/visionmedia/growl) and
+[NodeJS Growl](http://github.com/visionmedia/node-growl) libraries.
 
 ## Requirements
 
-* PHP >=5.3.0
-* OSX/Windows: Growl + growlnotify
-* OSX: terminal-notifier
-* Linux: notify-send
+### OS X
 
-## Installation
+* [Growl](http://growl.info/downloads)
+* [growlnotify](http://growl.info/downloads#generaldownloads)
 
-Add this package to your composer.json file:
+... Or install `terminal-notifier`:
+
+	 $ sudo gem install terminal-notifier
+
+### Linux
+
+Install `notify-send`:
+
+	$ sudo apt-get install libnotify-bin
+
+### Windows
+
+* [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
+* [growlnotify for Windows](http://www.growlforwindows.com/gfw/help/growlnotify.aspx)
+
+### Composer
+
+Add this package to your `composer.json` file:
 
 ```composer
   {
