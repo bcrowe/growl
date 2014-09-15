@@ -23,7 +23,7 @@ class Growl
     public function growl($message, $options = [])
     {
         $args = $this->getArguments();
-        $command = $this->buildCommand($message, $args, $options);
+        $command = $this->buildCommand($message, $options, $args);
 
         exec($command);
 
@@ -39,7 +39,7 @@ class Growl
      * @param array $options Options chosen/set by the user.
      * @return string The fully-built command to be executed.
      */
-    public function buildCommand($message, $args = [], $options = [])
+    public function buildCommand($message, $options = [], $args = [])
     {
         $command = [$args['pkg']];
 
