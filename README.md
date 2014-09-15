@@ -1,7 +1,7 @@
-# Growl + Notifications for PHP
+# Growl and Notifications for PHP
 
-Growl and notification support for PHP. Thanks to TJ Holowaychuk for inspiration
-with his [Ruby Growl](http://github.com/visionmedia/growl) and
+Growl support for PHP. Thanks to TJ Holowaychuk for inspiration with his
+[Ruby Growl](http://github.com/visionmedia/growl) and
 [NodeJS Growl](http://github.com/visionmedia/node-growl) libraries.
 
 ## Requirements
@@ -50,7 +50,7 @@ $Growl = new \BryanCrowe\Growl();
 ?>
 ```
 
-... And use the `growl()` method to execute a growl. The `growl()` method
+... and use the `growl()` method to execute a growl. The `growl()` method
 accepts two parameters, a `$message` string and an `$options` array:
 
 ```php
@@ -65,9 +65,9 @@ $Growl->growl('This is my message.', [
 
 There are a few of available keys for the `$options` array:
 
-* **title** The title of the growl/notification.
-* **subtitle** The subtitle of the growl/notification. (terminal-notifier only)
-* **sticky** Makes the growl stick until closed. (growlnotify and notify-send only)
+* **title** The title of the growl.
+* **subtitle** The subtitle of the growl. (*terminal-notifier only*)
+* **sticky** Makes the growl persist until closed. (*growlnotify and notify-send only*)
 
 An example using all options:
 
