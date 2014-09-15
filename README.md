@@ -26,6 +26,8 @@ Install `notify-send`:
 * [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
 * [growlnotify for Windows](http://www.growlforwindows.com/gfw/help/growlnotify.aspx)
 
+## Installation
+
 ### Composer
 
 Add this package to your `composer.json` file:
@@ -48,7 +50,8 @@ $Growl = new \BryanCrowe\Growl();
 ?>
 ```
 
-And use the `growl()` method to execute a growl:
+... And use the `growl()` method to execute a growl. The `growl()` method
+accepts two parameters, a `$message` string and an `$options` array:
 
 ```php
 <?php
@@ -58,12 +61,9 @@ $Growl->growl('This is my message.', [
 ?>
 ```
 
-The `growl()` method accepts two parameters, a `$message` string and a
-`$options` array.
-
 ### Options
 
-There are a few of available options:
+There are a few of available keys for the `$options` array:
 
 * **title** The title of the growl/notification.
 * **subtitle** The subtitle of the growl/notification. (terminal-notifier only)
