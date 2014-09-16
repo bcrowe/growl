@@ -1,5 +1,5 @@
 <?php
-namespace BryanCrowe;
+namespace BryanCrowe\Growl;
 
 use RuntimeException;
 

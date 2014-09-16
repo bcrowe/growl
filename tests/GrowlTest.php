@@ -1,5 +1,5 @@
 <?php
-use BryanCrowe\Growl;
+use BryanCrowe\Growl\Growl;
 use \PHPUnit_Framework_TestCase;
 
 class GrowlTest extends PHPUnit_Framework_TestCase
