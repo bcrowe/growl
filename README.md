@@ -81,6 +81,17 @@ $Growl->growl('This is my message.', [
 ?>
 ```
 
+### Monolog Handler
+
+```php
+<?php
+use BryanCrowe\Monolog\Handler\GrowlHandler;
+use Monolog\Logger;
+$log = new Logger('name');
+$log->pushHandler(new GrowlHandler());
+?>
+```
+
 ## License
 
 The MIT License (MIT)
