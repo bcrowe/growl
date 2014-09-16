@@ -1,8 +1,9 @@
-# Growl and Notifications for PHP
+# Growl and Notifications for PHP and Monolog
 
 Growl support for PHP. Thanks to TJ Holowaychuk for inspiration with his
 [Ruby Growl](http://github.com/visionmedia/growl) and
-[NodeJS Growl](http://github.com/visionmedia/node-growl) libraries.
+[NodeJS Growl](http://github.com/visionmedia/node-growl) libraries. With
+[Monolog Support]](https://github.com/bcrowe/growl#monolog-handler).
 
 ## Requirements
 
