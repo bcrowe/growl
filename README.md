@@ -84,6 +84,8 @@ $Growl->growl('This is my message.', [
 
 ### Monolog Handler
 
+Include [monolog](https://github.com/Seldaek/monolog) in your project and:
+
 ```php
 <?php
 use BryanCrowe\Monolog\Handler\GrowlHandler;
