@@ -88,6 +88,7 @@ $Growl->growl('This is my message.', [
 <?php
 use BryanCrowe\Monolog\Handler\GrowlHandler;
 use Monolog\Logger;
+// ...
 $log = new Logger('name');
 $log->pushHandler(new GrowlHandler());
 ?>
