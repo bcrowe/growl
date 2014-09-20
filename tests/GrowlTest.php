@@ -77,13 +77,13 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     {
         $argSets = $this->argSets;
 
-        $expected = 'notify-send "Hello Darwin Terminal" "This is a Linux notification!"';
-        $options = ['title' => 'Hello Darwin Terminal'];
+        $expected = 'notify-send "Hello Linux Notify" "This is a Linux notification!"';
+        $options = ['title' => 'Hello Linux Notify'];
         $result = $this->Growl->buildCommand('This is a Linux notification!', $options, $argSets['Linux-Notify']);
         $this->assertEquals($expected, $result);
 
-        $expected = 'notify-send "Hello Darwin Terminal" "This is a Linux notification!" -t 0';
-        $options = ['title' => 'Hello Darwin Terminal', 'subtitle' => 'Cool Subtitle', 'sticky' => true];
+        $expected = 'notify-send "Hello Linux Notify" "This is a Linux notification!" -t 0';
+        $options = ['title' => 'Hello Linux Notify', 'subtitle' => 'Cool Subtitle', 'sticky' => true];
         $result = $this->Growl->buildCommand('This is a Linux notification!', $options, $argSets['Linux-Notify']);
         $this->assertEquals($expected, $result);
     }
