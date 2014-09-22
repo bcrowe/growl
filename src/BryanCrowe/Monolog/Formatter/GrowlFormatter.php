@@ -5,5 +5,5 @@ use Monolog\Formatter\LineFormatter;
 
 class GrowlFormatter extends LineFormatter
 {
-    const SIMPLE_FORMAT = "[%datetime%] \n %message%";
+    const SIMPLE_FORMAT = "%message%";
 }
