@@ -91,50 +91,50 @@ class Growl
      * not "growlnotify" is available.
      *
      * @return array
+     * @throws RuntimeException
      */
     protected function getArguments()
     {
-        switch (PHP_OS) {
-            case 'Darwin':
-                if (exec('which growlnotify')) {
-                    return [
-                        'type' => 'Darwin-Growl',
-                        'pkg' => 'growlnotify',
-                        'msg' => '-m',
-                        'title' => '',
-                        'sticky' => '--sticky'
-                    ];
-                } elseif (exec('which terminal-notifier')) {
-                    return [
-                        'type' => 'Darwin-Notifier',
-                        'pkg' => 'terminal-notifier',
-                        'msg' => '-message',
-                        'title' => '-title',
-                        'subtitle' => '-subtitle'
-                    ];
-                }
-            break;
-            case 'Linux':
-                if (exec('which notify-send')) {
-                    return [
-                        'type' => 'Linux-Notify',
-                        'pkg' => 'notify-send',
-                        'msg' => '',
-                        'sticky' => '-t 0'
-                    ];
-                }
-            break;
-            case 'WINNT':
-                if (exec('where growlnotify')) {
-                    return [
-                        'type' => 'Windows-Growl',
-                        'pkg' => 'growlnotify',
-                        'msg' => '',
-                        'title' => '/t:',
-                        'sticky' => '/s:true'
-                    ];
-                }
-            break;
+        if (PHP_OS === 'Darwin') {
+            if (exec('which growlnotify')) {
+                return [
+                    'type' => 'Darwin-Growl',
+                    'pkg' => 'growlnotify',
+                    'msg' => '-m',
+                    'title' => '',
+                    'sticky' => '--sticky'
+                ];
+            }
+            if (exec('which terminal-notifier')) {
+                return [
+                    'type' => 'Darwin-Notifier',
+                    'pkg' => 'terminal-notifier',
+                    'msg' => '-message',
+                    'title' => '-title',
+                    'subtitle' => '-subtitle'
+                ];
+            }
+        }
+        if (PHP_OS === 'Linux') {
+            if (exec('which notify-send')) {
+                return [
+                    'type' => 'Linux-Notify',
+                    'pkg' => 'notify-send',
+                    'msg' => '',
+                    'sticky' => '-t 0'
+                ];
+            }
+        }
+        if (PHP_OS === 'WINNT') {
+            if (exec('where growlnotify')) {
+                return [
+                    'type' => 'Windows-Growl',
+                    'pkg' => 'growlnotify',
+                    'msg' => '',
+                    'title' => '/t:',
+                    'sticky' => '/s:true'
+                ];
+            }
         }
 
         throw new RuntimeException('Could not find any notification packages.');
