@@ -2,12 +2,15 @@
 
 [![Build Status](https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square)](https://travis-ci.org/bcrowe/growl)
 
-Growl support for PHP. Thanks to TJ Holowaychuk for inspiration with his
+Growl support for PHP. With
+[Monolog support](https://github.com/bcrowe/growl#monolog-handler). Thanks to TJ
+Holowaychuk for inspiration with his
 [Ruby Growl](http://github.com/visionmedia/growl) and
-[NodeJS Growl](http://github.com/visionmedia/node-growl) libraries. With
-[Monolog Support](https://github.com/bcrowe/growl#monolog-handler).
+[NodeJS Growl](http://github.com/visionmedia/node-growl) libraries.
 
 ## Requirements
+
+PHP 5.4+ and one of the following notification programs:
 
 ### OS X
 
