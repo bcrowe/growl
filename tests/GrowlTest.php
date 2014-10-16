@@ -44,7 +44,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     public function tearDown()
     {
         unset($this->argSets);
-        unset($this->Loader);
+        unset($this->Growl);
         parent::tearDown();
     }
 
