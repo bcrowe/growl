@@ -1,5 +1,8 @@
 # Growl and Notifications for PHP and Monolog
 
+[![Author](http://img.shields.io/badge/author-@_beakman-blue.svg?style=flat-square)](https://twitter.com/_beakman)
+[![Latest Version](https://img.shields.io/github/release/bcrowe/growl.svg?style=flat-square)](https://github.com/bcrowe/growl/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)<br>
 [![Build Status](https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square)](https://travis-ci.org/bcrowe/growl)
 
 Growl support for PHP. With
