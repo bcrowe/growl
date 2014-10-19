@@ -143,6 +143,7 @@ class Growl
     /**
      * Wraps strings in double quotations.
      *
+     * @param string $string The string to wrap
      * @return string
      */
     protected function quotify($string)
