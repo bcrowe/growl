@@ -22,7 +22,9 @@ PHP 5.4+ and one of the following notification programs:
 
 ... Or install `terminal-notifier`:
 
-	 $ gem install terminal-notifier
+```bash
+$ gem install terminal-notifier
+```
 
 ### Linux
 
@@ -30,11 +32,15 @@ Install `notify-send`.
 
 #### Debian/Ubuntu
 
-	$ apt-get install libnotify-bin
+``` bash
+$ apt-get install libnotify-bin
+```
 
 #### RedHat/Fedora
 
-  $ yum install libnotify
+``` bash
+$ yum install libnotify
+```
 
 ### Windows
 
@@ -45,7 +51,9 @@ Install `notify-send`.
 
 ### Composer
 
-  $ composer require bcrowe/growl
+``` bash
+$ composer require bcrowe/growl
+```
 
 ## Usage
 
@@ -53,6 +61,8 @@ Create a new instance of the Growl class:
 
 ```php
 <?php
+use BryanCrowe\Growl\Growl;
+// ...
 $Growl = new \BryanCrowe\Growl\Growl();
 ?>
 ```
@@ -63,7 +73,7 @@ accepts two parameters, a `$message` string and an `$options` array:
 ```php
 <?php
 $Growl->growl('This is my message.', [
-    'title' => 'Hello World'
+	'title' => 'Hello World'
 ]);
 ?>
 ```
@@ -81,9 +91,9 @@ An example using all options:
 ```php
 <?php
 $Growl->growl('This is my message.', [
-    'title' => 'Hello World',
-    'subtitle' => 'Earth',
-    'sticky' => true
+	'title' => 'Hello World',
+	'subtitle' => 'Earth',
+	'sticky' => true
 ]);
 ?>
 ```
