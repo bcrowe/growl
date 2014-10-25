@@ -22,13 +22,19 @@ PHP 5.4+ and one of the following notification programs:
 
 ... Or install `terminal-notifier`:
 
-	 $ sudo gem install terminal-notifier
+	 $ gem install terminal-notifier
 
 ### Linux
 
-Install `notify-send`:
+Install `notify-send`.
 
-	$ sudo apt-get install libnotify-bin
+#### Debian/Ubuntu
+
+	$ apt-get install libnotify-bin
+
+#### RedHat/Fedora
+
+  $ yum install libnotify
 
 ### Windows
 
@@ -39,15 +45,7 @@ Install `notify-send`:
 
 ### Composer
 
-Add this package to your `composer.json` file:
-
-```composer
-  {
-    "require": {
-      "bcrowe/growl": "dev-master"
-    }
-  }
-```
+  $ composer require bcrowe/growl
 
 ## Usage
 
