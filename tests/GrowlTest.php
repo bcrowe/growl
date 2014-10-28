@@ -55,12 +55,12 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $expected = 'growlnotify -m "This is a Darwin growl!"  "Hello Darwin Growl" --sticky';
         $options = ['title' => 'Hello Darwin Growl', 'subtitle' => 'Unsuppored Subtitle', 'sticky' => true];
         $result = $this->Growl->buildCommand('This is a Darwin growl!', $options, $argSets['Darwin-Growl']);
-        $this->assertEquals($expected, $result);
+        $this->assertSame($expected, $result);
 
         $expected = 'growlnotify -m "This is a Darwin terminal notification with no sticky!"  "Hello Darwin Growl"';
         $options = ['title' => 'Hello Darwin Growl', 'subtitle' => 'Unsuppored Subtitle'];
         $result = $this->Growl->buildCommand('This is a Darwin terminal notification with no sticky!', $options, $argSets['Darwin-Growl']);
-        $this->assertEquals($expected, $result);
+        $this->assertSame($expected, $result);
     }
 
     public function testDarwninTerminalNotifier()
@@ -70,7 +70,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $expected = 'terminal-notifier -message "This is a Darwin terminal notification!" -title "Hello Darwin Terminal" -subtitle "Cool Subtitle"';
         $options = ['title' => 'Hello Darwin Terminal', 'subtitle' => 'Cool Subtitle', 'sticky' => true];
         $result = $this->Growl->buildCommand('This is a Darwin terminal notification!', $options, $argSets['Darwin-Notifier']);
-        $this->assertEquals($expected, $result);
+        $this->assertSame($expected, $result);
     }
 
     public function testLinuxNotifySend()
@@ -80,12 +80,12 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $expected = 'notify-send "Hello Linux Notify" "This is a Linux notification!"';
         $options = ['title' => 'Hello Linux Notify'];
         $result = $this->Growl->buildCommand('This is a Linux notification!', $options, $argSets['Linux-Notify']);
-        $this->assertEquals($expected, $result);
+        $this->assertSame($expected, $result);
 
         $expected = 'notify-send "Hello Linux Notify" "This is a Linux notification!" -t 0';
         $options = ['title' => 'Hello Linux Notify', 'subtitle' => 'Cool Subtitle', 'sticky' => true];
         $result = $this->Growl->buildCommand('This is a Linux notification!', $options, $argSets['Linux-Notify']);
-        $this->assertEquals($expected, $result);
+        $this->assertSame($expected, $result);
     }
 
     public function testWindowsGrowlNotify()
@@ -95,6 +95,6 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $expected = 'growlnotify /t:"Hello Windows Growl" /s:true "This is a Windows growl!"';
         $options = ['title' => 'Hello Windows Growl', 'sticky' => true];
         $result = $this->Growl->buildCommand('This is a Windows growl!', $options, $argSets['Windows-Growl']);
-        $this->assertEquals($expected, $result);
+        $this->assertSame($expected, $result);
     }
 }
