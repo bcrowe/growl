@@ -90,8 +90,8 @@ class Growl
      * notification command, determined by which OS is running and whether or
      * not "growlnotify" is available.
      *
-     * @return array
-     * @throws RuntimeException
+     * @return array The array of arguments.
+     * @throws RuntimeException If a growl/notify-send package can't be found.
      */
     protected function getArguments()
     {
