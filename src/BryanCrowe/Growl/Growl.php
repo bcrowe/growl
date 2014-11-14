@@ -88,10 +88,10 @@ class Growl
     /**
      * Returns an array of arguments to be used in building the growl or
      * notification command, determined by which OS is running and whether or
-     * not "growlnotify" is available.
+     * not growlnotify, terminal-notifier, or notify-send is available.
      *
      * @return array The array of arguments.
-     * @throws RuntimeException If a growl/notify-send package can't be found.
+     * @throws RuntimeException If a notification package can't be found.
      */
     protected function getArguments()
     {
