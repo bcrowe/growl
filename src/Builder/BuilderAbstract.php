@@ -11,4 +11,9 @@ abstract class BuilderAbstract implements BuilderInterface
      * @return
      */
     public function build();
+
+    public function quotify($text)
+    {
+        return '"' . $text . '"';
+    }
 }
