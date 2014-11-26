@@ -15,7 +15,7 @@ class Growl
 
     public function execute()
     {
-        $command = $this->builder->build($args);
+        $command = $this->builder->build($this->args);
         return exec($command);
     }
 
