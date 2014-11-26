@@ -4,7 +4,9 @@ namespace BryanCrowe\Growl\Builder;
 
 class NotifySendBuilder extends BuilderAbstract
 {
-	public function build($args)
+    const PROGRAM = 'notify-send';
+
+    public function build($args)
     {
 
     }
