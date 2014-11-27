@@ -8,6 +8,14 @@ class GrowlBuilder extends BuilderAbstract
 
     public function build($args)
     {
+        $command = self::PROGRAM;
 
+        if (PHP_OS === 'Darwin') {
+
+        }
+
+        if (PHP_OS === 'WINNT') {
+
+        }
     }
 }

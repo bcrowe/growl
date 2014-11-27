@@ -8,6 +8,6 @@ class TerminalNotifierBuilder extends BuilderAbstract
 
     public function build($args)
     {
-
+        $command = self::PROGRAM;
     }
 }
