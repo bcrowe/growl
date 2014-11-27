@@ -2,7 +2,7 @@
 
 namespace BryanCrowe\Growl\Builder;
 
-class GrowlBuilder extends BuilderAbstract
+class GrowlNotifyBuilder extends BuilderAbstract
 {
     const PROGRAM = 'growlnotify';
 
