@@ -5,9 +5,9 @@ namespace BryanCrowe\Growl\Builder;
 interface BuilderInterface
 {
     /**
-     * Description.
+     * Build the command string to be executed.
      *
-     * @return
+     * @return string
      */
     public function build($args);
 }
