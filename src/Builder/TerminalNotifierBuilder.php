@@ -19,7 +19,7 @@ class TerminalNotifierBuilder extends BuilderAbstract
 
         if (isset($args['title'])) {
                 $command .= ' -title ' . $this->quotify($args['title']);
-            }
+        }
         if (isset($args['subtitle'])) {
             $command .= ' -subtitle ' . $this->quotify($args['subtitle']);
         }
