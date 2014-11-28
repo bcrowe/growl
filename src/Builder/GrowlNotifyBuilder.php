@@ -12,7 +12,7 @@ class GrowlNotifyBuilder extends BuilderAbstract
 
         if (PHP_OS === 'Darwin') {
             if (isset($args['title'])) {
-                $command .= ' -t' . $this->quotify($args['title']);
+                $command .= ' -t ' . $this->quotify($args['title']);
             }
             if (isset($args['message'])) {
                 $command .= ' -m ' . $this->quotify($args['message']);

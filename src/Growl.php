@@ -22,5 +22,6 @@ class Growl
     public function __call($name, $args)
     {
         $this->args[$name] = $args[0];
+        return $this;
     }
 }

@@ -9,5 +9,5 @@ interface BuilderInterface
      *
      * @return
      */
-    public function build();
+    public function build($args);
 }

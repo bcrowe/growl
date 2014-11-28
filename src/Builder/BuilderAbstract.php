@@ -10,7 +10,8 @@ abstract class BuilderAbstract implements BuilderInterface
      *
      * @return
      */
-    public function build();
+    abstract public function build($args);
+
 
     public function quotify($text)
     {
