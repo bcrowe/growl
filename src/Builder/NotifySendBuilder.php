@@ -6,6 +6,13 @@ class NotifySendBuilder extends BuilderAbstract
 {
     const PROGRAM = 'notify-send';
 
+    /**
+     * Builds the notify-send command to be executed.
+     *
+     * @param array $args An array of options to use for building the command.
+     *
+     * @return string The fully-built command to execute.
+     */
     public function build($args)
     {
         $command = self::PROGRAM;

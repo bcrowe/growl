@@ -6,6 +6,13 @@ class TerminalNotifierBuilder extends BuilderAbstract
 {
     const PROGRAM = 'terminal-notifier';
 
+    /**
+     * Builds the terminal-notifier command to be executed.
+     *
+     * @param array $args An array of options to use for building the command.
+     *
+     * @return string The fully-built command to execute.
+     */
     public function build($args)
     {
         $command = self::PROGRAM;

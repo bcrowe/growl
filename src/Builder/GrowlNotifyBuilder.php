@@ -6,6 +6,13 @@ class GrowlNotifyBuilder extends BuilderAbstract
 {
     const PROGRAM = 'growlnotify';
 
+    /**
+     * Builds the growlnotify command to be executed.
+     *
+     * @param array $args An array of options to use for building the command.
+     *
+     * @return string The fully-built command to execute.
+     */
     public function build($args)
     {
         $command = self::PROGRAM;
