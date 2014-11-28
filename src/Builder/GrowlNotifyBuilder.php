@@ -4,6 +4,11 @@ namespace BryanCrowe\Growl\Builder;
 
 class GrowlNotifyBuilder extends BuilderAbstract
 {
+    /**
+     * The program's name.
+     *
+     * @var string
+     */
     const PROGRAM = 'growlnotify';
 
     /**
