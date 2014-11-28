@@ -12,7 +12,6 @@ abstract class BuilderAbstract implements BuilderInterface
      */
     abstract public function build($args);
 
-
     /**
      * Wraps a string in double quotes.
      *

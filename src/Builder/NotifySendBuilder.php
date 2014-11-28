@@ -4,11 +4,11 @@ namespace BryanCrowe\Growl\Builder;
 
 class NotifySendBuilder extends BuilderAbstract
 {
-	/**
-	 * The program's name.
-	 *
-	 * @var string
-	 */
+    /**
+     * The program's name.
+     *
+     * @var string
+     */
     const PROGRAM = 'notify-send';
 
     /**
