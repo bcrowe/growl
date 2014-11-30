@@ -23,10 +23,10 @@ class NotifySendBuilder extends BuilderAbstract
         $command = self::PROGRAM;
 
         if (isset($args['title'])) {
-            $command .= ' ' . $this->quotify($args['title']);
+            $command .= ' ' . $this->escape($args['title']);
         }
         if (isset($args['message'])) {
-            $command .= ' ' . $this->quotify($args['message']);
+            $command .= ' ' . $this->escape($args['message']);
         }
         if (isset($args['sticky']) && $args['sticky'] === true) {
             $command .= ' -t 0';

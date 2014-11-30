@@ -24,13 +24,13 @@ class GrowlNotifyBuilder extends BuilderAbstract
 
         if (PHP_OS === 'Darwin') {
             if (isset($args['title'])) {
-                $command .= ' -t ' . $this->quotify($args['title']);
+                $command .= ' -t ' . $this->escape($args['title']);
             }
             if (isset($args['message'])) {
-                $command .= ' -m ' . $this->quotify($args['message']);
+                $command .= ' -m ' . $this->escape($args['message']);
             }
             if (isset($args['sticky']) && $args['sticky'] === true) {
-                $command .= ' --sticky';
+                $command .= ' -s';
             }
 
             return $command;
@@ -38,13 +38,13 @@ class GrowlNotifyBuilder extends BuilderAbstract
 
         if (PHP_OS === 'WINNT') {
             if (isset($args['title'])) {
-                $command .= ' /t:' . $this->quotify($args['title']);
+                $command .= ' /t:' . $this->escape($args['title']);
             }
             if (isset($args['sticky']) && $args['sticky'] === true) {
                 $command .= ' /s:true';
             }
             if (isset($args['message'])) {
-                $command .= ' ' . $this->quotify($args['message']);
+                $command .= ' ' . $this->escape($args['message']);
             }
 
             return $command;

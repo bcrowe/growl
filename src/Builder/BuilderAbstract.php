@@ -13,12 +13,14 @@ abstract class BuilderAbstract implements BuilderInterface
     abstract public function build($args);
 
     /**
-     * Wraps a string in double quotes.
+     * Escapes a argument.
+     *
+     * @param string $string The argument text.
      *
      * @return string
      */
-    public function quotify($text)
+    public function escape($string)
     {
-        return '"' . $text . '"';
+        return escapeshellarg($string);
     }
 }

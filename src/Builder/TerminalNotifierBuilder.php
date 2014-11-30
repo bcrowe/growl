@@ -23,13 +23,13 @@ class TerminalNotifierBuilder extends BuilderAbstract
         $command = self::PROGRAM;
 
         if (isset($args['title'])) {
-            $command .= ' -title ' . $this->quotify($args['title']);
+            $command .= ' -title ' . $this->escape($args['title']);
         }
         if (isset($args['subtitle'])) {
-            $command .= ' -subtitle ' . $this->quotify($args['subtitle']);
+            $command .= ' -subtitle ' . $this->escape($args['subtitle']);
         }
         if (isset($args['message'])) {
-            $command .= ' -message ' . $this->quotify($args['message']);
+            $command .= ' -message ' . $this->escape($args['message']);
         }
 
         return $command;
