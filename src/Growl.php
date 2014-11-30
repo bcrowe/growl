@@ -16,7 +16,7 @@ class Growl
      *
      * @var array
      */
-    protected $args = array();
+    protected $options = array();
 
     /**
      * Constructor.
@@ -39,7 +39,8 @@ class Growl
      */
     public function execute()
     {
-        $command = $this->builder->build($this->args);
+        $command = $this->builder->build($this->options);
+
         return exec($command);
     }
 
@@ -52,9 +53,10 @@ class Growl
      *
      * @return $this
      */
-    public function __call($name, $args)
+    public function __call($name, $values)
     {
-        $this->args[$name] = $args[0];
+        $this->args[$name] = $values[0];
+
         return $this;
     }
 }
