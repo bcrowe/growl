@@ -10,4 +10,11 @@ interface BuilderInterface
      * @return string
      */
     public function build($options);
+
+    /**
+     * Escapes a argument.
+     *
+     * @return string
+     */
+    public function escape($string);
 }
