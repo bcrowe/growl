@@ -70,7 +70,7 @@ Builder accepts, supply its value as its argument, and then execute the command:
 ```php
 <?php
 $Growl->title('Hello World')
-	->message('Whatsup?\'derp')
+	->message('Sup bro?! I\'m all the way turnt up!')
 	->sticky(true)
 	->execute();
 ?>
