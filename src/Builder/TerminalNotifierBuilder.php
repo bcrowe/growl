@@ -5,11 +5,11 @@ namespace BryanCrowe\Growl\Builder;
 class TerminalNotifierBuilder extends BuilderAbstract
 {
     /**
-     * The program's name.
+     * The command's name.
      *
      * @var string
      */
-    const PROGRAM = 'terminal-notifier';
+    protected $command = 'terminal-notifier';
 
     /**
      * Builds the terminal-notifier command to be executed.
@@ -20,7 +20,7 @@ class TerminalNotifierBuilder extends BuilderAbstract
      */
     public function build($options)
     {
-        $command = self::PROGRAM;
+        $command = $this->command;
 
         if (isset($options['title'])) {
             $command .= ' -title ' . $this->escape($options['title']);

@@ -5,11 +5,11 @@ namespace BryanCrowe\Growl\Builder;
 class NotifySendBuilder extends BuilderAbstract
 {
     /**
-     * The program's name.
+     * The command's name.
      *
      * @var string
      */
-    const PROGRAM = 'notify-send';
+    protected $command = 'notify-send';
 
     /**
      * Builds the notify-send command to be executed.
@@ -20,7 +20,7 @@ class NotifySendBuilder extends BuilderAbstract
      */
     public function build($options)
     {
-        $command = self::PROGRAM;
+        $command = $this->command;
 
         if (isset($options['title'])) {
             $command .= ' ' . $this->escape($options['title']);

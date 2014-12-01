@@ -5,11 +5,11 @@ namespace BryanCrowe\Growl\Builder;
 class GrowlNotifyBuilder extends BuilderAbstract
 {
     /**
-     * The program's name.
+     * The command's name.
      *
      * @var string
      */
-    const PROGRAM = 'growlnotify';
+    protected $command = 'growlnotify';
 
     /**
      * Builds the growlnotify command to be executed.
@@ -20,7 +20,7 @@ class GrowlNotifyBuilder extends BuilderAbstract
      */
     public function build($options)
     {
-        $command = self::PROGRAM;
+        $command = $this->command;
 
         if (PHP_OS === 'Darwin') {
             if (isset($options['title'])) {
