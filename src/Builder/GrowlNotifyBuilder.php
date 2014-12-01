@@ -14,22 +14,22 @@ class GrowlNotifyBuilder extends BuilderAbstract
     /**
      * Builds the growlnotify command to be executed.
      *
-     * @param array $args An array of options to use for building the command.
+     * @param array $options An array of options to use for building the command.
      *
      * @return string The fully-built command to execute.
      */
-    public function build($args)
+    public function build($options)
     {
         $command = self::PROGRAM;
 
         if (PHP_OS === 'Darwin') {
-            if (isset($args['title'])) {
-                $command .= ' -t ' . $this->escape($args['title']);
+            if (isset($options['title'])) {
+                $command .= ' -t ' . $this->escape($options['title']);
             }
-            if (isset($args['message'])) {
-                $command .= ' -m ' . $this->escape($args['message']);
+            if (isset($options['message'])) {
+                $command .= ' -m ' . $this->escape($options['message']);
             }
-            if (isset($args['sticky']) && $args['sticky'] === true) {
+            if (isset($options['sticky']) && $options['sticky'] === true) {
                 $command .= ' -s';
             }
 
@@ -37,14 +37,14 @@ class GrowlNotifyBuilder extends BuilderAbstract
         }
 
         if (PHP_OS === 'WINNT') {
-            if (isset($args['title'])) {
-                $command .= ' /t:' . $this->escape($args['title']);
+            if (isset($options['title'])) {
+                $command .= ' /t:' . $this->escape($options['title']);
             }
-            if (isset($args['sticky']) && $args['sticky'] === true) {
+            if (isset($options['sticky']) && $options['sticky'] === true) {
                 $command .= ' /s:true';
             }
-            if (isset($args['message'])) {
-                $command .= ' ' . $this->escape($args['message']);
+            if (isset($options['message'])) {
+                $command .= ' ' . $this->escape($options['message']);
             }
 
             return $command;

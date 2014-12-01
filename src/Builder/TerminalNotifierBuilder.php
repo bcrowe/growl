@@ -14,22 +14,22 @@ class TerminalNotifierBuilder extends BuilderAbstract
     /**
      * Builds the terminal-notifier command to be executed.
      *
-     * @param array $args An array of options to use for building the command.
+     * @param array $options An array of options to use for building the command.
      *
      * @return string The fully-built command to execute.
      */
-    public function build($args)
+    public function build($options)
     {
         $command = self::PROGRAM;
 
-        if (isset($args['title'])) {
-            $command .= ' -title ' . $this->escape($args['title']);
+        if (isset($options['title'])) {
+            $command .= ' -title ' . $this->escape($options['title']);
         }
-        if (isset($args['subtitle'])) {
-            $command .= ' -subtitle ' . $this->escape($args['subtitle']);
+        if (isset($options['subtitle'])) {
+            $command .= ' -subtitle ' . $this->escape($options['subtitle']);
         }
-        if (isset($args['message'])) {
-            $command .= ' -message ' . $this->escape($args['message']);
+        if (isset($options['message'])) {
+            $command .= ' -message ' . $this->escape($options['message']);
         }
 
         return $command;

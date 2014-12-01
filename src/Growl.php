@@ -55,7 +55,7 @@ class Growl
      */
     public function __call($name, $values)
     {
-        $this->args[$name] = $values[0];
+        $this->options[$name] = $values[0];
 
         return $this;
     }

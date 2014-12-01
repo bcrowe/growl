@@ -10,7 +10,7 @@ abstract class BuilderAbstract implements BuilderInterface
      *
      * @return string
      */
-    abstract public function build($args);
+    abstract public function build($options);
 
     /**
      * Escapes a argument.
