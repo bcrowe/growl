@@ -2,10 +2,12 @@
 
 namespace BryanCrowe\Growl;
 
+use BryanCrowe\Growl\Builder\BuilderAbstract;
+
 class Growl
 {
     /**
-     * The builder to use for building the command.
+     * The Builder to use for building the command.
      *
      * @var BuilderAbstract
      */
@@ -21,13 +23,13 @@ class Growl
     /**
      * Constructor.
      *
-     * Accepts a Builder parameter to be used in building the command.
+     * Accepts a Builder object to be used in building the command.
      *
      * @param BuilderAbstract $builder
      *
      * @return void
      */
-    public function __construct($builder)
+    public function __construct(BuilderAbstract $builder)
     {
         $this->builder = $builder;
     }
@@ -53,9 +55,9 @@ class Growl
      *
      * @return $this
      */
-    public function __call($name, $values)
+    public function __call($name, $args)
     {
-        $this->options[$name] = $values[0];
+        $this->options[$name] = $args[0];
 
         return $this;
     }
