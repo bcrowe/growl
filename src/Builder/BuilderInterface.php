@@ -12,7 +12,7 @@ interface BuilderInterface
     public function build($options);
 
     /**
-     * Escapes a argument.
+     * Escapes an argument.
      *
      * @return string
      */

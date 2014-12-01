@@ -13,7 +13,7 @@ abstract class BuilderAbstract implements BuilderInterface
     abstract public function build($options);
 
     /**
-     * Escapes a argument.
+     * Escapes an argument.
      *
      * @param string $string The argument text.
      *
