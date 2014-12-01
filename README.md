@@ -78,7 +78,7 @@ $Growl->title('Hello World')
 
 ### Builders
 
-There are a few available `Builers` that come with this package...
+There are a few available `Builder`s that come with this package...
 
 #### BryanCrowe\Growl\Builder\GrowlNotifyBuilder
 
