@@ -4,7 +4,6 @@ namespace BryanCrowe\Growl\Builder;
 
 abstract class BuilderAbstract implements BuilderInterface
 {
-
     /**
      * The commands's name.
      *
