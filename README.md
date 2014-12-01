@@ -1,19 +1,15 @@
-# Growl and Notifications for PHP and Monolog
+# Growl Notifications with PHP
 
 [![Author](http://img.shields.io/badge/author-@_beakman-blue.svg?style=flat-square)](https://twitter.com/_beakman)
 [![Latest Version](https://img.shields.io/github/release/bcrowe/growl.svg?style=flat-square)](https://github.com/bcrowe/growl/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square)](https://travis-ci.org/bcrowe/growl)
 
-Growl support for PHP. With
-[Monolog support](https://github.com/bcrowe/growl#monolog-handler). Thanks to TJ
-Holowaychuk for inspiration with his
-[Ruby Growl](http://github.com/visionmedia/growl) and
-[NodeJS Growl](http://github.com/visionmedia/node-growl) libraries.
+Growl Notifications with PHP.
 
 ## Requirements
 
-PHP 5.4+ and one of the following notification programs:
+PHP 5.3+ and one of the following notification programs:
 
 ### OS X
 
@@ -57,60 +53,60 @@ $ composer require bcrowe/growl
 
 ## Usage
 
-Create a new instance of the Growl class:
+Create a new instance of the Growl class and supply a Builder class:
 
 ```php
 <?php
 use BryanCrowe\Growl\Growl;
+use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 // ...
-$Growl = new \BryanCrowe\Growl\Growl();
+$Growl = new Growl(new GrowlNotifyBuilder());
 ?>
 ```
 
-... and use the `growl()` method to execute a growl. The `growl()` method
-accepts two parameters, a `$message` string and an `$options` array:
+... and then method chain calls with the method names equivalent to what the
+Builder accepts, supply its value as its argument, and then execute the command:
 
 ```php
 <?php
-$Growl->growl('This is my message.', [
-	'title' => 'Hello World'
-]);
+$Growl->title('Hello World')
+	->message('Whatsup?\'derp')
+	->sticky(true)
+	->execute();
 ?>
 ```
 
-### Options
+### Builders
 
-There are a few of available keys for the `$options` array:
+There are a few available `Builers` that come with this package...
 
-* **title** The title of the growl.
-* **subtitle** The subtitle of the growl. (*terminal-notifier only*)
-* **sticky** Makes the growl persist until closed. (*growlnotify and notify-send only*)
+#### BryanCrowe\Growl\Builder\GrowlNotifyBuilder
 
-An example using all options:
+Builds commands for `growlnotify`.
 
-```php
-<?php
-$Growl->growl('This is my message.', [
-	'title' => 'Hello World',
-	'subtitle' => 'Earth',
-	'sticky' => true
-]);
-?>
-```
+Available options:
 
-### Monolog Handler
+* **title** *string* The title of the growl.
+* **message** *string* The growl's body.
+* **sticky** *boolean* Whether or not make the growl stick until closed.
 
-Include [monolog](https://github.com/Seldaek/monolog) in your project and:
+#### BryanCrowe\Growl\Builder\TerminalNotifierBuilder
 
-```php
-<?php
-use BryanCrowe\Monolog\Handler\GrowlHandler;
-use Monolog\Logger;
-// ...
-$log = new Logger('name');
-$log->pushHandler(new GrowlHandler());
-?>
-```
+Builds commands for `terminal-notifier`.
+
+Available options:
+
+* **title** *string* The title of the growl.
+* **subtitle** *string* The growl's subtitle.
+* **message** *string* The growl's body.
+
+#### BryanCrowe\Growl\Builder\NotifySendBuilder
+
+Builds commands for `notify-send`.
+
+* **title** *string* The title of the growl.
+* **message** *string* The growl's body.
+* **sticky** *boolean* Whether or not make the growl stick until closed.
 
 ## License
 
