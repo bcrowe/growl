@@ -53,7 +53,8 @@ $ composer require bcrowe/growl
 
 ## Usage
 
-Create a new instance of the Growl class and supply a Builder class:
+Create a new instance of the `Growl` class and supply a `Builder` class in its
+construction:
 
 ```php
 <?php
@@ -64,8 +65,11 @@ $Growl = new Growl(new GrowlNotifyBuilder());
 ?>
 ```
 
-... and then method chain calls with the method names equivalent to what the
-Builder accepts, supply its value as its argument, and then execute the command:
+Then, you can chain method calls to set key/value options for a `Builder` to
+use. The `Growl` class uses the `__call` magic method to set option key/value
+pairs, so the method name will be the key, and it's first argument will be the
+value. After setting options, the last thing to do is `execute()` your built
+command:
 
 ```php
 <?php
@@ -96,17 +100,17 @@ Builds commands for `terminal-notifier`.
 
 Available options:
 
-* **title** *string* The title of the growl.
-* **subtitle** *string* The growl's subtitle.
-* **message** *string* The growl's body.
+* **title** *string* The title of the notification.
+* **subtitle** *string* The notification's subtitle.
+* **message** *string* The notification's body.
 
 #### BryanCrowe\Growl\Builder\NotifySendBuilder
 
 Builds commands for `notify-send`.
 
-* **title** *string* The title of the growl.
-* **message** *string* The growl's body.
-* **sticky** *boolean* Whether or not make the growl stick until closed.
+* **title** *string* The title of the notification.
+* **message** *string* The notification's body.
+* **sticky** *boolean* Whether or not make the notification stick until closed.
 
 ## License
 
