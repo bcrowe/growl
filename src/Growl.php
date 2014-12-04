@@ -47,17 +47,16 @@ class Growl
     }
 
     /**
-     * Implement the __call magic method to provide an expressive way of setting
-     * options for commands.
+     * Set options for Builders with a key/value.
      *
-     * @param string $name The name of the method called.
-     * @param array $args An array of the supplied arguments.
+     * @param string $key The key.
+     * @param array $value The value of the key.
      *
      * @return $this
      */
-    public function __call($name, $args)
+    public function set($key, $value)
     {
-        $this->options[$name] = $args[0];
+        $this->options[$key] = $value;
 
         return $this;
     }
