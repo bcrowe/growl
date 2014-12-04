@@ -65,17 +65,15 @@ $Growl = new Growl(new GrowlNotifyBuilder());
 ?>
 ```
 
-Then, you can chain method calls to set key/value options for a `Builder` to
-use. The `Growl` class uses the `__call` magic method to set option key/value
-pairs, so the method name will be the key, and it's first argument will be the
-value. After setting options, the last thing to do is `execute()` your built
-command:
+Then, you can set key/value options for a `Builder` to use with the `Growl`
+class `set()` method to set option key/value pairs. After setting options, the
+last thing to do is `execute()` your built command:
 
 ```php
 <?php
-$Growl->title('Hello World')
-	->message('Sup bro?! I\'m all the way turnt up!')
-	->sticky(true)
+$Growl->set('title', 'Hello World')
+	->set('message', 'Sup bro?! I\'m all the way turnt up!')
+	->set('sticky', true)
 	->execute();
 ?>
 ```
