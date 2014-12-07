@@ -31,7 +31,7 @@ class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
             'title' => 'Hello',
             'message' => 'Welcome'
         );
-        $expected = "tnotify-send 'Hello' 'Welcome'";
+        $expected = "notify-send 'Hello' 'Welcome'";
         $result = $this->NotifySendBuilder->build($options);
         $this->assertSame($expected, $result);
     }
