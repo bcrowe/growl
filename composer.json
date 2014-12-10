@@ -1,8 +1,8 @@
 {
     "name": "bcrowe/growl",
     "type": "library",
-    "description": "Cross-platform growl notifications via PHP with a Monolog handler.",
-    "keywords": ["php", "growl", "notifications", "monolog", "handler"],
+    "description": "Growl notifications with PHP.",
+    "keywords": ["php", "growl", "notifications"],
     "homepage": "https://github.com/bcrowe/growl",
     "license": "MIT",
     "authors": [
