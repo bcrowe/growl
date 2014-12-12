@@ -22,32 +22,16 @@ class GrowlNotifyBuilder extends BuilderAbstract
     {
         $command = $this->command;
 
-        if (PHP_OS === 'Darwin') {
-            if (isset($options['title'])) {
-                $command .= ' -t ' . $this->escape($options['title']);
-            }
-            if (isset($options['message'])) {
-                $command .= ' -m ' . $this->escape($options['message']);
-            }
-            if (isset($options['sticky']) && $options['sticky'] === true) {
-                $command .= ' -s';
-            }
-
-            return $command;
+        if (isset($options['title'])) {
+            $command .= ' -t ' . $this->escape($options['title']);
+        }
+        if (isset($options['message'])) {
+            $command .= ' -m ' . $this->escape($options['message']);
+        }
+        if (isset($options['sticky']) && $options['sticky'] === true) {
+            $command .= ' -s';
         }
 
-        if (PHP_OS === 'WINNT') {
-            if (isset($options['title'])) {
-                $command .= ' /t:' . $this->escape($options['title']);
-            }
-            if (isset($options['sticky']) && $options['sticky'] === true) {
-                $command .= ' /s:true';
-            }
-            if (isset($options['message'])) {
-                $command .= ' ' . $this->escape($options['message']);
-            }
-
-            return $command;
-        }
+        return $command;
     }
 }

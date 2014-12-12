@@ -83,7 +83,7 @@ $Growl->set('title', 'Hello World')
 
 There are a few available `Builder`s that come with this package...
 
-#### BryanCrowe\Growl\Builder\GrowlNotifyBuilder
+#### GrowlNotifyBuilder & GrowlNotifyWindowsBuilder
 
 Builds commands for `growlnotify`.
 
@@ -93,7 +93,7 @@ Available options:
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
 
-#### BryanCrowe\Growl\Builder\TerminalNotifierBuilder
+#### TerminalNotifierBuilder
 
 Builds commands for `terminal-notifier`.
 
@@ -103,7 +103,7 @@ Available options:
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
 
-#### BryanCrowe\Growl\Builder\NotifySendBuilder
+#### NotifySendBuilder
 
 Builds commands for `notify-send`.
 
