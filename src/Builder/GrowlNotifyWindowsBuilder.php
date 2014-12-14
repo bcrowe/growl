@@ -23,13 +23,13 @@ class GrowlNotifyWindowsBuilder extends BuilderAbstract
         $command = $this->command;
 
         if (isset($options['title'])) {
-            $command .= ' /t:' . $this->escape($options['title']);
+            $command .= ' /t:' . $options['title'];
         }
         if (isset($options['sticky']) && $options['sticky'] === true) {
             $command .= ' /s:true';
         }
         if (isset($options['message'])) {
-            $command .= ' ' . $this->escape($options['message']);
+            $command .= ' ' . $options['message'];
         }
 
         return $command;

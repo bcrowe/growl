@@ -23,13 +23,13 @@ class TerminalNotifierBuilder extends BuilderAbstract
         $command = $this->command;
 
         if (isset($options['title'])) {
-            $command .= ' -title ' . $this->escape($options['title']);
+            $command .= ' -title ' . $options['title'];
         }
         if (isset($options['subtitle'])) {
-            $command .= ' -subtitle ' . $this->escape($options['subtitle']);
+            $command .= ' -subtitle ' . $options['subtitle'];
         }
         if (isset($options['message'])) {
-            $command .= ' -message ' . $this->escape($options['message']);
+            $command .= ' -message ' . $options['message'];
         }
 
         return $command;

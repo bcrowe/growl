@@ -39,9 +39,13 @@ class Growl
      *
      * @return string
      */
-    public function execute()
+    public function execute($escape = true)
     {
-        $command = $this->builder->build($this->options);
+        $options = $this->options;
+        if ($escape === true) {
+            $options = $this->escape($options);
+        }
+        $command = $this->builder->build($options);
 
         return exec($command);
     }
@@ -59,5 +63,21 @@ class Growl
         $this->options[$key] = $value;
 
         return $this;
+    }
+
+    /**
+     * Escapes the set of option values.
+     *
+     * @param array A set of key/value options.
+     *
+     * @return array The sanitized set of key/value options.
+     */
+    protected function escape($options)
+    {
+        $results = [];
+        foreach ($options as $key => $value) {
+            $result[$key] = escapeshellarg($value);
+        }
+        return $results;
     }
 }

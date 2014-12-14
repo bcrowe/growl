@@ -23,10 +23,10 @@ class NotifySendBuilder extends BuilderAbstract
         $command = $this->command;
 
         if (isset($options['title'])) {
-            $command .= ' ' . $this->escape($options['title']);
+            $command .= ' ' . $options['title'];
         }
         if (isset($options['message'])) {
-            $command .= ' ' . $this->escape($options['message']);
+            $command .= ' ' . $options['message'];
         }
         if (isset($options['sticky']) && $options['sticky'] === true) {
             $command .= ' -t 0';

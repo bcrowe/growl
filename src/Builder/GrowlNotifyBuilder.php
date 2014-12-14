@@ -23,10 +23,10 @@ class GrowlNotifyBuilder extends BuilderAbstract
         $command = $this->command;
 
         if (isset($options['title'])) {
-            $command .= ' -t ' . $this->escape($options['title']);
+            $command .= ' -t ' . $options['title'];
         }
         if (isset($options['message'])) {
-            $command .= ' -m ' . $this->escape($options['message']);
+            $command .= ' -m ' . $options['message'];
         }
         if (isset($options['sticky']) && $options['sticky'] === true) {
             $command .= ' -s';
