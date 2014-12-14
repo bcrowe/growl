@@ -73,7 +73,7 @@ class Growl
     {
         $results = [];
         foreach ($options as $key => $value) {
-            $result[$key] = escapeshellarg($value);
+            $results[$key] = escapeshellarg($value);
         }
         return $results;
     }
