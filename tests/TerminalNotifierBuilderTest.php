@@ -23,7 +23,7 @@ class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
             'subtitle' => 'World',
             'message' => 'Welcome'
         );
-        $expected = "terminal-notifier -title 'Hello' -subtitle 'World' -message 'Welcome'";
+        $expected = 'terminal-notifier -title Hello -subtitle World -message Welcome';
         $result = $this->TerminalNotifierBuilder->build($options);
         $this->assertSame($expected, $result);
 
@@ -31,7 +31,7 @@ class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
             'title' => 'Hello',
             'message' => 'Welcome'
         );
-        $expected = "terminal-notifier -title 'Hello' -message 'Welcome'";
+        $expected = 'terminal-notifier -title Hello -message Welcome';
         $result = $this->TerminalNotifierBuilder->build($options);
         $this->assertSame($expected, $result);
     }

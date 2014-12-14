@@ -23,7 +23,7 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
             'message' => 'World',
             'sticky' => true
         );
-        $expected = "growlnotify -t 'Hello' -m 'World' -s";
+        $expected = 'growlnotify -t Hello -m World -s';
         $result = $this->GrowlNotifyBuilder->build($options);
         $this->assertSame($expected, $result);
 
@@ -32,7 +32,7 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
             'message' => 'World',
             'sticky' => false
         );
-        $expected = "growlnotify -t 'Hello' -m 'World'";
+        $expected = 'growlnotify -t Hello -m World';
         $result = $this->GrowlNotifyBuilder->build($options);
         $this->assertSame($expected, $result);
     }

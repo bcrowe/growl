@@ -23,7 +23,7 @@ class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
             'message' => 'World',
             'sticky' => true
         );
-        $expected = "notify-send 'Hello' 'World' -t 0";
+        $expected = 'notify-send Hello World -t 0';
         $result = $this->NotifySendBuilder->build($options);
         $this->assertSame($expected, $result);
 
@@ -31,7 +31,7 @@ class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
             'title' => 'Hello',
             'message' => 'Welcome'
         );
-        $expected = "notify-send 'Hello' 'Welcome'";
+        $expected = 'notify-send Hello Welcome';
         $result = $this->NotifySendBuilder->build($options);
         $this->assertSame($expected, $result);
     }
