@@ -71,7 +71,7 @@ class Growl
      */
     protected function escape($options)
     {
-        $results = [];
+        $results = array();
         foreach ($options as $key => $value) {
             $results[$key] = escapeshellarg($value);
         }
