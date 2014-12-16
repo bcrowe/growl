@@ -92,6 +92,7 @@ Available options:
 * **title** *string* The title of the growl.
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
+* **appIcon** *string* An application icon to use.
 
 #### TerminalNotifierBuilder
 
