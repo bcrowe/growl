@@ -31,6 +31,9 @@ class GrowlNotifyBuilder extends BuilderAbstract
         if (isset($options['appIcon'])) {
             $command .= ' -a ' . $options['appIcon'];
         }
+        if (isset($options['url'])) {
+            $command .= ' --url ' . $options['url'];
+        }
         if (isset($options['sticky']) && $options['sticky'] === true) {
             $command .= ' -s';
         }
