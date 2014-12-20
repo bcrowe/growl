@@ -48,7 +48,7 @@ class Growl
      */
     public function execute()
     {
-        if ($this->escape !== false)
+        if ($this->escape !== false) {
             $this->options = $this->escape($this->options);
         }
         $command = $this->builder->build($this->options);
