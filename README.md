@@ -87,6 +87,37 @@ $Growl->setOptions([
 ?>
 ```
 
+By default, this package will escape all command arguments that are supplied as
+options. If you want to change this, there are two options. Either completely
+disable escaping, or provide a list of safe option keys that will be bypassed
+while escaping is enabled.
+
+```php
+<?php
+$Growl = new Growl(new TerminalNotifieBuilder());
+
+// Completely disable escaping...
+$Growl->setOptions([
+		'title' => 'Hello World',
+		'subtitle' => 'Earth',
+		'message' => 'Sup bro?! I\'m all the way turnt up!',
+		'open' => 'http://www.google.com'
+	])
+	->setEscape(false)
+	->execute();
+
+// Set a safe list of option keys. Can be an array of option keys, or a string.
+$Growl->setOptions([
+		'title' => 'Hello World',
+		'subtitle' => $definitelySafeSubtitle,
+		'message' => 'Sup bro?! I\'m all the way turnt up!',
+		'open' => $definitelySafeURL
+	])
+	->setSafe(['subtitle', 'open'])
+	->execute();
+?>
+```
+
 ### Builders
 
 There are a few available `Builder`s that come with this package...
