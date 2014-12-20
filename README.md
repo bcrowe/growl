@@ -95,7 +95,7 @@ There are a few available `Builder`s that come with this package...
 
 Builds commands for `growlnotify`.
 
-Available options:
+Available option keys:
 
 * **title** *string* The title of the growl.
 * **message** *string* The growl's body.
@@ -107,7 +107,7 @@ Available options:
 
 Builds commands for `terminal-notifier`.
 
-Available options:
+Available option keys:
 
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
@@ -119,6 +119,8 @@ Available options:
 #### NotifySendBuilder
 
 Builds commands for `notify-send`.
+
+Available option keys:
 
 * **title** *string* The title of the notification.
 * **message** *string* The notification's body.
