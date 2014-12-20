@@ -28,6 +28,14 @@ class Growl
     protected $escape = true;
 
     /**
+     * An array of options that are considered safe and should not be escaped
+     * while escaping is turned on.
+     *
+     * @var array
+     */
+    protected $safe = array();
+
+    /**
      * Constructor.
      *
      * Accepts a Builder object to be used in building the command.
@@ -104,6 +112,31 @@ class Growl
     }
 
     /**
+     * Sets option names that are considered safe, in order to bypass escaping.
+     *
+     * @param mixed A string or array of option names assumed to be safe from
+     * escaping.
+     *
+     * @return $this
+     */
+    public function setSafe($options)
+    {
+        if (is_string($options)) {
+            $this->safe[] = $options;
+            return $this;
+        }
+
+        if (is_array($options)) {
+            foreach($options as $key => $value) {
+                $this->safe[] = $value;
+            }
+            return $this;
+        }
+
+        throw new InvalidArgumentException('The setSafe() method expects a string or an array');
+    }
+
+    /**
      * Escapes the set of option values.
      *
      * @param array A set of key/value options.
@@ -114,7 +147,11 @@ class Growl
     {
         $results = array();
         foreach ($options as $key => $value) {
-            $results[$key] = escapeshellarg($value);
+            if (!in_array($key, $this->safe)) {
+                $results[$key] = escapeshellarg($value);
+            } else {
+                $results[$key] = $value;
+            }
         }
         return $results;
     }
