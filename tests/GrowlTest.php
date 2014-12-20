@@ -24,9 +24,9 @@ class GrowlTest extends PHPUnit_Framework_TestCase
             'title' => 'Hey',
             'message' => 'Whatsup?'
         );
-        $result = $this->Growl->set('hello', 'world')
-            ->set('title', 'Hey')
-            ->set('message', 'Whatsup?');
+        $result = $this->Growl->setOption('hello', 'world')
+            ->setOption('title', 'Hey')
+            ->setOption('message', 'Whatsup?');
 
         $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
     }

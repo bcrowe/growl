@@ -110,7 +110,7 @@ class Growl
      *
      * @return array The sanitized set of key/value options.
      */
-    protected function escape($options)
+    protected function escape(array $options)
     {
         $results = array();
         foreach ($options as $key => $value) {
