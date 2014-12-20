@@ -67,15 +67,23 @@ $Growl = new Growl(new GrowlNotifyBuilder());
 ```
 
 Then, you can set key/value options for a `Builder` to use with the `Growl`
-class `set()` method to set option key/value pairs. After setting options, the
-last thing to do is `execute()` your built command:
+class' `setOption()` or `setOptions()` methods to set option key/value pairs.
+After setting options, the last thing to do is `execute()` your built command:
 
 ```php
 <?php
-$Growl->set('title', 'Hello World')
-	->set('message', 'Sup bro?! I\'m all the way turnt up!')
-	->set('sticky', true)
+$Growl->setOption('title', 'Hello World')
+	->setOption('message', 'Sup bro?! I\'m all the way turnt up!')
+	->setOption('sticky', true)
 	->execute();
+
+// or...
+
+$Growl->setOptions([
+		'title' => 'Hello World',
+		'message' => 'Sup bro?! I\'m all the way turnt up!',
+		'sticky' => true
+	])->execute();
 ?>
 ```
 
