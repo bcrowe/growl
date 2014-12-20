@@ -21,6 +21,13 @@ class Growl
     protected $options = array();
 
     /**
+     * Whether or not to escape the command arguments.
+     *
+     * @var boolean
+     */
+    protected $escape = true;
+
+    /**
      * Constructor.
      *
      * Accepts a Builder object to be used in building the command.
@@ -41,8 +48,10 @@ class Growl
      */
     public function execute()
     {
-        $options = $this->escape($this->options);
-        $command = $this->builder->build($options);
+        if ($this->escape !== false)
+            $this->options = $this->escape($this->options);
+        }
+        $command = $this->builder->build($this->options);
 
         return exec($command);
     }
@@ -55,9 +64,41 @@ class Growl
      *
      * @return $this
      */
-    public function set($key, $value)
+    public function setOption($key, $value)
     {
         $this->options[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set an entire set of options for a Builder. This is available so a user
+     * bulk-set options rather than chaining set() calls.
+     *
+     * @param array $options The entire set of options.
+     *
+     * @return $this
+     */
+    public function setOptions(array $options)
+    {
+        foreach($options as $key => $value) {
+            $this->options[$key] = $value;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the escape properties value. Set it to false to disable command
+     * arguement escaping.
+     *
+     * @param boolean $value Pass false to disable escaping.
+     *
+     * @return $this
+     */
+    public function setEscape($value)
+    {
+        $this->escape = $value;
 
         return $this;
     }
