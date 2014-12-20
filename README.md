@@ -104,6 +104,9 @@ Available options:
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
+* **appIcon** *string* A URL to an image to be used at the icon.
+* **contentImage** *string* A URL to an image to be in the notfication body.
+* **open** *string* A URL to go to when the notification is clicked.
 
 #### NotifySendBuilder
 
