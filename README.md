@@ -138,7 +138,7 @@ Available option keys:
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
 * **appIcon** *string* An application icon to use.
-* **url ** *string* A URL to open if the growl is clicked.
+* **url** *string* A URL to open if the growl is clicked.
 
 #### TerminalNotifierBuilder
 
