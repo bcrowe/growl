@@ -6,13 +6,8 @@
 [![Build Status](https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square)](https://travis-ci.org/bcrowe/growl)
 [![Total Downloads](https://img.shields.io/packagist/dt/bcrowe/growl.svg?style=flat-square)](https://packagist.org/packages/bcrowe/growl)
 
-This package aims to provide an easy way to construct and execute commands for
-various notification programs. While prototyping applications, I've always liked
-receiving notifications with runtime details, after a long-running fake
-data generating shell -- rather than constantly referring back to my terminal or
-having to always tack on a && operator to execute a generic/undetailed
-notification after its completion. I've also found executing notifications from
-PHP nice for immediate feedback when writing/running PHP daemons.
+This package aims to provide an easy and fluent interface to construct and
+execute commands for various desktop notification programs.
 
 ## Requirements
 
