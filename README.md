@@ -144,7 +144,7 @@ Available option keys:
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
-* **appIcon** *string* A URL to an image to be used at the icon. *(Mavericks+ only)*
+* **appIcon** *string* A URL to an image to be used as the icon. *(Mavericks+ only)*
 * **contentImage** *string* A URL to an image to be in the notification body. *(Mavericks+ only)*
 * **open** *string* A URL to go to when the notification is clicked.
 
