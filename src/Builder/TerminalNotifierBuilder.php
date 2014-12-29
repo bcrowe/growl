@@ -14,16 +14,17 @@ class TerminalNotifierBuilder extends BuilderAbstract
     /**
      * Constructor. Offers an opportunity to set a command's alias.
      *
-     * @param string $alias An alias for the command.
-     *
      * @throws InvalidArgumentException If the argument isn't a string.
      */
-    public function __construct($alias)
+    public function __construct()
     {
-        if (is_string($alias)) {
-            $this->command = $alias;
-        } else {
-            throw new InvalidArgumentException('This constructor expects a string argument.');
+        $args = func_get_args();
+        if (!empty($args)) {
+            if (is_string($args[0])) {
+                $this->command = $args[0];
+            } else {
+                throw new InvalidArgumentException('This constructor expects a string argument.');
+            }
         }
     }
 
