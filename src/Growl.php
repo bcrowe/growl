@@ -117,6 +117,9 @@ class Growl
      * @param mixed A string or array of option names assumed to be safe from
      * escaping.
      *
+     * @throws InvalidArgumentException If the method argument isn't a string or
+     * array.
+     *
      * @return $this
      */
     public function setSafe($options)
@@ -133,7 +136,7 @@ class Growl
             return $this;
         }
 
-        throw new InvalidArgumentException('The setSafe() method expects a string or an array');
+        throw new InvalidArgumentException('This method expects a string or an array argument.');
     }
 
     /**
