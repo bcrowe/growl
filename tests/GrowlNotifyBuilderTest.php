@@ -37,7 +37,10 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
         $expected = 'growlnotify -t Hello -m World';
         $result = $this->GrowlNotifyBuilder->build($options);
         $this->assertSame($expected, $result);
+    }
 
+    public function testBuildWithAlias()
+    {
         $options = array(
             'title' => 'Hello',
             'message' => 'World',
