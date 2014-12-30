@@ -8,11 +8,13 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
         $this->GrowlNotifyBuilder = new GrowlNotifyBuilder();
+        $this->GrowlNotifyBuilderAliased = new GrowlNotifyBuilder('grwl');
     }
 
     public function tearDown()
     {
         unset($this->GrowlNotifyBuilder);
+        unset($this->GrowlNotifyBuilderAliased);
         parent::tearDown();
     }
 
@@ -34,6 +36,15 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
         );
         $expected = 'growlnotify -t Hello -m World';
         $result = $this->GrowlNotifyBuilder->build($options);
+        $this->assertSame($expected, $result);
+
+        $options = array(
+            'title' => 'Hello',
+            'message' => 'World',
+            'sticky' => true
+        );
+        $expected = 'grwl -t Hello -m World -s';
+        $result = $this->GrowlNotifyBuilderAliased->build($options);
         $this->assertSame($expected, $result);
     }
 }
