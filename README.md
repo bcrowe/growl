@@ -18,7 +18,7 @@ PHP 5.3+ and one of the following notification programs:
 * [Growl](http://growl.info/downloads)
 * [growlnotify](http://growl.info/downloads#generaldownloads)
 
-... Or install `terminal-notifier`:
+... Or install the `terminal-notifier` gem:
 
 ```bash
 $ gem install terminal-notifier
