@@ -103,7 +103,7 @@ while escaping is enabled.
 
 ```php
 <?php
-$Growl = new Growl(new TerminalNotifieBuilder());
+$Growl = new Growl(new TerminalNotifierBuilder());
 
 // Completely disable escaping...
 $Growl->setOptions([
