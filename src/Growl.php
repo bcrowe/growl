@@ -98,7 +98,7 @@ class Growl
 
     /**
      * Set the escape properties value. Set it to false to disable command
-     * arguement escaping.
+     * argument escaping.
      *
      * @param boolean $value Pass false to disable escaping.
      *
