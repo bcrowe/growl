@@ -12,23 +12,6 @@ class GrowlNotifyWindowsBuilder extends BuilderAbstract
     protected $command = 'growlnotify';
 
     /**
-     * Constructor. Offers an opportunity to set a command's alias.
-     *
-     * @throws InvalidArgumentException If the argument isn't a string.
-     */
-    public function __construct()
-    {
-        $args = func_get_args();
-        if (!empty($args)) {
-            if (is_string($args[0])) {
-                $this->command = $args[0];
-            } else {
-                throw new InvalidArgumentException('This constructor expects a string argument.');
-            }
-        }
-    }
-
-    /**
      * Builds the growlnotify command to be executed.
      *
      * @param array $options An array of options to use for building the command.
