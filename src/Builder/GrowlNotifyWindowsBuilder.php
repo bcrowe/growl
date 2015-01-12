@@ -2,6 +2,9 @@
 
 namespace BryanCrowe\Growl\Builder;
 
+/**
+ * This class is a builder for growlnotify for Windows commands.
+ */
 class GrowlNotifyWindowsBuilder extends BuilderAbstract
 {
     /**

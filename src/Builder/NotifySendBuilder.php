@@ -2,6 +2,9 @@
 
 namespace BryanCrowe\Growl\Builder;
 
+/**
+ * This class is a builder for notify-send commands.
+ */
 class NotifySendBuilder extends BuilderAbstract
 {
     /**

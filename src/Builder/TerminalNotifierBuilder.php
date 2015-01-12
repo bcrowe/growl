@@ -2,6 +2,9 @@
 
 namespace BryanCrowe\Growl\Builder;
 
+/**
+ * This class is a builder for terminal-notifier commands.
+ */
 class TerminalNotifierBuilder extends BuilderAbstract
 {
     /**
