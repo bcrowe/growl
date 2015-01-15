@@ -4,6 +4,10 @@ namespace BryanCrowe\Growl;
 
 use BryanCrowe\Growl\Builder\BuilderAbstract;
 
+/**
+ * This class accepts a Builder in its constructor to be used for building the growl/notification command. It contains
+ * various methods to set command options, toggling escaping, whitelisting fields, and finally executing the command.
+ */
 class Growl
 {
     /**
