@@ -18,7 +18,6 @@ class NotifySendBuilder extends BuilderAbstract
      * Builds the notify-send command to be executed.
      *
      * @param array $options An array of options to use for building the command.
-     *
      * @return string The fully-built command to execute.
      */
     public function build($options)

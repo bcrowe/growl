@@ -47,7 +47,6 @@ class Growl
      * Accepts a Builder object to be used in building the command.
      *
      * @param BuilderAbstract $builder
-     *
      * @return void
      */
     public function __construct(BuilderAbstract $builder)
@@ -75,7 +74,6 @@ class Growl
      *
      * @param string $key The key.
      * @param array $value The value of the key.
-     *
      * @return $this
      */
     public function setOption($key, $value)
@@ -90,7 +88,6 @@ class Growl
      * bulk-set options rather than chaining set() calls.
      *
      * @param array $options The entire set of options.
-     *
      * @return $this
      */
     public function setOptions(array $options)
@@ -107,7 +104,6 @@ class Growl
      * argument escaping.
      *
      * @param boolean $value Pass false to disable escaping.
-     *
      * @return $this
      */
     public function setEscape($value)
@@ -122,10 +118,8 @@ class Growl
      *
      * @param mixed A string or array of option names assumed to be safe from
      * escaping.
-     *
      * @throws InvalidArgumentException If the method argument isn't a string or
      * array.
-     *
      * @return $this
      */
     public function setSafe($options)
@@ -151,7 +145,6 @@ class Growl
      * Escapes the set of option values.
      *
      * @param array A set of key/value options.
-     *
      * @return array The sanitized set of key/value options.
      */
     protected function escape(array $options)
