@@ -1,4 +1,4 @@
-<?php 
+<?php
 use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 
 class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
