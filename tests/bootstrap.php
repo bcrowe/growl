@@ -1,8 +1,4 @@
 <?php
-require_once dirname(__DIR__) . '/src/Growl.php';
-require_once dirname(__DIR__) . '/src/Builder/BuilderInterface.php';
-require_once dirname(__DIR__) . '/src/Builder/BuilderAbstract.php';
-require_once dirname(__DIR__) . '/src/Builder/GrowlNotifyBuilder.php';
-require_once dirname(__DIR__) . '/src/Builder/GrowlNotifyWindowsBuilder.php';
-require_once dirname(__DIR__) . '/src/Builder/TerminalNotifierBuilder.php';
-require_once dirname(__DIR__) . '/src/Builder/NotifySendBuilder.php';
+if (! @include_once __DIR__.'/../vendor/autoload.php') {
+    exit("You must set up the project dependencies, run the following commands:\n> wget http://getcomposer.org/composer.phar\n> php composer.phar install\n");
+}

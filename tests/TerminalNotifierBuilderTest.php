@@ -1,6 +1,5 @@
 <?php
 use BryanCrowe\Growl\Builder\TerminalNotifierBuilder;
-use \PHPUnit_Framework_TestCase;
 
 class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
 {

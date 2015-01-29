@@ -1,6 +1,5 @@
 <?php
 use BryanCrowe\Growl\Builder\NotifySendBuilder;
-use \PHPUnit_Framework_TestCase;
 
 class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
 {
