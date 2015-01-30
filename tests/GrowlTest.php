@@ -29,11 +29,11 @@ class GrowlTest extends PHPUnit_Framework_TestCase
             ->setOption('message', 'Whatsup?');
         $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
 
-        $result = $this->Growl->setOptions([
+        $result = $this->Growl->setOptions(array(
             'hello' => 'world',
             'title' => 'Hey',
             'message' => 'Whatsup?'
-        ]);
+        ));
         $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
     }
 
