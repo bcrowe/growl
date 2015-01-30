@@ -62,5 +62,17 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $expected = array('hello');
         $growl = $this->Growl->setSafe('hello');
         $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
+
+        $expected = array('hello', 'world', 'again');
+        $growl->setSafe(array('world', 'again'));
+        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testSetSafeException()
+    {
+        $growl = $this->Growl->setSafe(true);
     }
 }

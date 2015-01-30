@@ -3,6 +3,7 @@
 namespace BryanCrowe\Growl;
 
 use BryanCrowe\Growl\Builder\BuilderAbstract;
+use \InvalidArgumentException;
 
 /**
  * This class accepts a Builder in its constructor to be used for building the
