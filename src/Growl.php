@@ -56,18 +56,18 @@ class Growl
     }
 
     /**
-     * Executes the built command.
+     * Builds the command.
      *
      * @return string
      */
-    public function execute()
+    public function buildCommand()
     {
         if ($this->escape !== false) {
             $this->options = $this->escape($this->options);
         }
         $command = $this->builder->build($this->options);
 
-        return exec($command);
+        return $command;
     }
 
     /**
