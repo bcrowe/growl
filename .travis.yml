@@ -13,3 +13,5 @@ before_script:
 
 script:
   - phpunit --coverage-text --coverage-clover=coverage.clover
+  - php vendor/bin/coveralls
+
