@@ -23,10 +23,17 @@ class GrowlTest extends PHPUnit_Framework_TestCase
             'title' => 'Hey',
             'message' => 'Whatsup?'
         );
+
         $result = $this->Growl->setOption('hello', 'world')
             ->setOption('title', 'Hey')
             ->setOption('message', 'Whatsup?');
+        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
 
+        $result = $this->Growl->setOptions([
+            'hello' => 'world',
+            'title' => 'Hey',
+            'message' => 'Whatsup?'
+        ]);
         $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
     }
 
@@ -42,5 +49,18 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $method->setAccessible(true);
 
         $this->assertEquals($expected, $method->invokeArgs($growl, array(array('hello' => 'world'))));
+    }
+
+    public function testSetEscape()
+    {
+        $growl = $this->Growl->setEscape(false);
+        $this->assertFalse(PHPUnit_Framework_Assert::readAttribute($growl, 'escape'));
+    }
+
+    public function testSetSafe()
+    {
+        $expected = array('hello');
+        $growl = $this->Growl->setSafe('hello');
+        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
     }
 }
