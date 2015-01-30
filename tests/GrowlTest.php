@@ -16,6 +16,20 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         parent::tearDown();
     }
 
+    public function testBuildCommand()
+    {
+        $expected = 'growlnotify -t \'Hello\' -m World';
+        $result = $this->Growl
+                    ->setOptions(array(
+                        'title' => 'Hello',
+                        'message' => 'World'
+                    ))
+                    ->setSafe('message')
+                    ->buildCommand();
+
+        $this->assertSame($expected, $result);
+    }
+
     public function testSet()
     {
         $expected = array(
