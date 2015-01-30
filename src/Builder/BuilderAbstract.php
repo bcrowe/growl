@@ -2,6 +2,8 @@
 
 namespace BryanCrowe\Growl\Builder;
 
+use \InvalidARgumentException;
+
 abstract class BuilderAbstract implements BuilderInterface
 {
     /**

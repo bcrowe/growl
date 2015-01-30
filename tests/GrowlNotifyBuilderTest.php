@@ -52,4 +52,12 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
         $result = $this->GrowlNotifyBuilderAliased->build($options);
         $this->assertSame($expected, $result);
     }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testAliasException()
+    {
+        $exception = new GrowlNotifyBuilder(array('no' => 'arraysplz'));
+    }
 }
