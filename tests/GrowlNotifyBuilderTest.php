@@ -22,9 +22,12 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
         $options = array(
             'title' => 'Hello',
             'message' => 'World',
+            'appIcon' => 'Mail',
+            'url' => 'http://www.example.com',
             'sticky' => true
         );
-        $expected = 'growlnotify -t Hello -m World -s';
+        $expected = 'growlnotify -t Hello -m World -a Mail --url' .
+                    ' http://www.example.com -s';
         $result = $this->GrowlNotifyBuilder->build($options);
         $this->assertSame($expected, $result);
 
