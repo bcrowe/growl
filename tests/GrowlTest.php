@@ -40,7 +40,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $growlReflection = new ReflectionClass($growl);
         $method = $growlReflection->getMethod('escape');
         $method->setAccessible(true);
-     
+
         $this->assertEquals($expected, $method->invokeArgs($growl, array(array('hello' => 'world'))));
     }
 }
