@@ -68,9 +68,9 @@ use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 
 $Growl = new Growl(new GrowlNotifyBuilder());
 
-// You can optionally set an alias for a command by passing in a string to the
-// builder's constructor. For instance, if you've aliased 'growlnotify' to
-// 'grwl', you could set it as so:
+// You can optionally set an alias for a command, or specify its path, by
+// passing in a string to the builder's constructor. For instance, if you've
+// aliased 'growlnotify' to 'grwl', you could set it as so:
 
 $Growl = new Growl(new GrowlNotifyBuilder('grwl'));
 ?>
