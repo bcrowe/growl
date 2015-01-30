@@ -4,6 +4,7 @@
 [![Latest Version](https://img.shields.io/github/release/bcrowe/growl.svg?style=flat-square)](https://github.com/bcrowe/growl/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square)](https://travis-ci.org/bcrowe/growl)
+[![Code Coverage](https://img.shields.io/coveralls/bcrowe/growl.svg?style=flat-square)](https://coveralls.io/r/bcrowe/growl)
 [![Total Downloads](https://img.shields.io/packagist/dt/bcrowe/growl.svg?style=flat-square)](https://packagist.org/packages/bcrowe/growl)
 
 This package aims to provide an easy and fluent interface to construct and
