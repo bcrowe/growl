@@ -73,6 +73,10 @@ $Growl = new Growl(new GrowlNotifyBuilder());
 // aliased 'growlnotify' to 'grwl', you could set it as so:
 
 $Growl = new Growl(new GrowlNotifyBuilder('grwl'));
+
+// or ...
+
+$Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 ?>
 ```
 
