@@ -19,23 +19,23 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
 
     public function testBuild()
     {
-        $options = array(
+        $options = [
             'title' => 'Hello',
             'message' => 'World',
             'appIcon' => 'Mail',
             'url' => 'http://www.example.com',
             'sticky' => true
-        );
+        ];
         $expected = 'growlnotify -t Hello -m World -a Mail --url' .
                     ' http://www.example.com -s';
         $result = $this->GrowlNotifyBuilder->build($options);
         $this->assertSame($expected, $result);
 
-        $options = array(
+        $options = [
             'title' => 'Hello',
             'message' => 'World',
             'sticky' => false
-        );
+        ];
         $expected = 'growlnotify -t Hello -m World';
         $result = $this->GrowlNotifyBuilder->build($options);
         $this->assertSame($expected, $result);
@@ -43,11 +43,11 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
 
     public function testBuildWithAlias()
     {
-        $options = array(
+        $options = [
             'title' => 'Hello',
             'message' => 'World',
             'sticky' => true
-        );
+        ];
         $expected = 'grwl -t Hello -m World -s';
         $result = $this->GrowlNotifyBuilderAliased->build($options);
         $this->assertSame($expected, $result);
@@ -58,6 +58,6 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
      */
     public function testAliasException()
     {
-        $exception = new GrowlNotifyBuilder(array('no' => 'arraysplz'));
+        $exception = new GrowlNotifyBuilder(['no' => 'arraysplz']);
     }
 }

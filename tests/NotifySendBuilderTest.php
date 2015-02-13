@@ -17,19 +17,19 @@ class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
 
     public function testBuild()
     {
-        $options = array(
+        $options = [
             'title' => 'Hello',
             'message' => 'World',
             'sticky' => true
-        );
+        ];
         $expected = 'notify-send Hello World -t 0';
         $result = $this->NotifySendBuilder->build($options);
         $this->assertSame($expected, $result);
 
-        $options = array(
+        $options = [
             'title' => 'Hello',
             'message' => 'Welcome'
-        );
+        ];
         $expected = 'notify-send Hello Welcome';
         $result = $this->NotifySendBuilder->build($options);
         $this->assertSame($expected, $result);

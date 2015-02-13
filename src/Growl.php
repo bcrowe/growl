@@ -25,7 +25,7 @@ class Growl
      *
      * @var array
      */
-    protected $options = array();
+    protected $options = [];
 
     /**
      * Whether or not to escape the command arguments.
@@ -40,7 +40,7 @@ class Growl
      *
      * @var array
      */
-    protected $safe = array();
+    protected $safe = [];
 
     /**
      * Constructor.
@@ -166,7 +166,7 @@ class Growl
      */
     protected function escape(array $options)
     {
-        $results = array();
+        $results = [];
         foreach ($options as $key => $value) {
             if (!in_array($key, $this->safe)) {
                 $results[$key] = escapeshellarg($value);
