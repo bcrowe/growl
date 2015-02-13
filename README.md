@@ -83,16 +83,14 @@ $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 Then, you can set key/value options for a `Builder` to use with the `Growl`
 class' `setOption()` or `setOptions()` methods to set option key/value pairs.
 After setting options, the last thing to do is build the command with
-`buildCommand()`, and execute it:
+`buildCommand()` or run it with `execute()`:
 
 ```php
 <?php
 $Growl->setOption('title', 'Hello World')
 	->setOption('message', 'Sup bro?! I\'m all the way turnt up!')
 	->setOption('sticky', true)
-	->buildCommand();
-
-exec($Growl);
+	->execute();
 
 // or...
 
@@ -123,9 +121,7 @@ $Growl->setOptions([
 		'open' => 'http://www.google.com'
 	])
 	->setEscape(false)
-	->buildCommand();
-
-exec($Growl);
+	->execute();
 
 // Set a safe list of option keys. Can be an array of option keys, or a string.
 $Growl->setOptions([
@@ -135,9 +131,7 @@ $Growl->setOptions([
 		'open' => $definitelySafeURL
 	])
 	->setSafe(['subtitle', 'open'])
-	->buildCommand();
-
-exec($Growl);
+	->execute();
 ?>
 ```
 
