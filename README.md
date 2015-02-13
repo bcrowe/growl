@@ -12,7 +12,7 @@ execute commands for various desktop notification programs.
 
 ## Requirements
 
-PHP 5.3+ and one of the following notification programs:
+PHP 5.4+ and one of the following notification programs:
 
 ### OS X
 
