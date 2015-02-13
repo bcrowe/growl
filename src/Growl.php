@@ -56,6 +56,22 @@ class Growl
     }
 
     /**
+     * Executes the command on your machine.
+     *
+     * @codeCoverageIgnore
+     * @return void
+     */
+    public function execute()
+    {
+        if ($this->escape !== false) {
+            $this->options = $this->escape($this->options);
+        }
+        $command = $this->builder->build($this->options);
+
+        exec($command);
+    }
+
+    /**
      * Builds the command.
      *
      * @return string
