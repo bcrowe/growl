@@ -24,6 +24,10 @@ PHP 5.4+ and one of the following notification programs:
 ```bash
 $ gem install terminal-notifier
 ```
+or...
+```bash
+$ brew install terminal-notifier
+```
 
 ### Linux
 
