@@ -18,15 +18,16 @@ abstract class BuilderAbstract implements BuilderInterface
      *
      * @throws InvalidArgumentException If the argument isn't a string.
      */
-    public function __construct()
+    public function __construct($path = null)
     {
-        $args = func_get_args();
-        if (!empty($args)) {
-            if (is_string($args[0])) {
-                $this->command = $args[0];
-            } else {
-                throw new InvalidArgumentException('This constructor expects a string argument.');
-            }
+        if ($path === null) {
+            return;
+        }
+
+        if (is_string($path)) {
+            $this->command = $path;
+        } else {
+            throw new InvalidArgumentException('This constructor expects a string argument.');
         }
     }
 
