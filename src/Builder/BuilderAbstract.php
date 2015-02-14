@@ -7,11 +7,11 @@ use \InvalidARgumentException;
 abstract class BuilderAbstract implements BuilderInterface
 {
     /**
-     * The command's name.
+     * The command's path.
      *
      * @var string
      */
-    protected $command;
+    protected $path;
 
     /**
      * Constructor. Offers an opportunity to set a command's alias/path.
@@ -25,7 +25,7 @@ abstract class BuilderAbstract implements BuilderInterface
         }
 
         if (is_string($path)) {
-            $this->command = $path;
+            $this->path = $path;
         } else {
             throw new InvalidArgumentException('This constructor expects a string argument.');
         }

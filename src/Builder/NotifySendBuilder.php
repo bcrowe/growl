@@ -8,11 +8,11 @@ namespace BryanCrowe\Growl\Builder;
 class NotifySendBuilder extends BuilderAbstract
 {
     /**
-     * The command's name.
+     * The notifier's path.
      *
      * @var string
      */
-    protected $command = 'notify-send';
+    protected $path = 'notify-send';
 
     /**
      * Builds the notify-send command to be executed.
@@ -22,7 +22,7 @@ class NotifySendBuilder extends BuilderAbstract
      */
     public function build($options)
     {
-        $command = $this->command;
+        $command = $this->path;
 
         if (isset($options['title'])) {
             $command .= ' ' . $options['title'];

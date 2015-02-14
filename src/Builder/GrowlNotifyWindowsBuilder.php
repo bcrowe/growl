@@ -8,11 +8,11 @@ namespace BryanCrowe\Growl\Builder;
 class GrowlNotifyWindowsBuilder extends BuilderAbstract
 {
     /**
-     * The command's name.
+     * The notifier's path.
      *
      * @var string
      */
-    protected $command = 'growlnotify';
+    protected $path = 'growlnotify';
 
     /**
      * Builds the growlnotify command to be executed.
@@ -22,7 +22,7 @@ class GrowlNotifyWindowsBuilder extends BuilderAbstract
      */
     public function build($options)
     {
-        $command = $this->command;
+        $command = $this->path;
 
         if (isset($options['title'])) {
             $command .= ' /t:' . $options['title'];

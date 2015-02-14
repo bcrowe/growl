@@ -8,11 +8,11 @@ namespace BryanCrowe\Growl\Builder;
 class TerminalNotifierBuilder extends BuilderAbstract
 {
     /**
-     * The command's name.
+     * The notifier's path.
      *
      * @var string
      */
-    protected $command = 'terminal-notifier';
+    protected $path = 'terminal-notifier';
 
     /**
      * Builds the terminal-notifier command to be executed.
@@ -22,7 +22,7 @@ class TerminalNotifierBuilder extends BuilderAbstract
      */
     public function build($options)
     {
-        $command = $this->command;
+        $command = $this->path;
 
         if (isset($options['title'])) {
             $command .= ' -title ' . $options['title'];
