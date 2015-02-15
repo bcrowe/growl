@@ -7,14 +7,14 @@ use \InvalidARgumentException;
 abstract class BuilderAbstract implements BuilderInterface
 {
     /**
-     * The command's path.
+     * The notifier's path.
      *
      * @var string
      */
     protected $path;
 
     /**
-     * Constructor. Offers an opportunity to set a command's alias/path.
+     * Constructor. Offers an opportunity to set a notifier's alias/path.
      *
      * @throws InvalidArgumentException If the argument isn't a string.
      */
