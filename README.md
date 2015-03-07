@@ -87,7 +87,7 @@ After setting options, the last thing to do is build the command with
 ```php
 <?php
 $Growl->setOption('title', 'Hello World')
-	->setOption('message', 'Sup bro?! I\'m all the way turnt up!')
+	->setOption('message', 'How are you doing?')
 	->setOption('sticky', true)
 	->execute();
 
@@ -95,7 +95,7 @@ $Growl->setOption('title', 'Hello World')
 
 $Growl->setOptions([
 		'title' => 'Hello World',
-		'message' => 'Sup bro?! I\'m all the way turnt up!',
+		'message' => 'How are you doing?',
 		'sticky' => true
 	])->buildCommand();
 
@@ -116,7 +116,7 @@ $Growl = new Growl(new TerminalNotifierBuilder());
 $Growl->setOptions([
 		'title' => 'Hello World',
 		'subtitle' => 'Earth',
-		'message' => 'Sup bro?! I\'m all the way turnt up!',
+		'message' => 'How are you doing?',
 		'open' => 'http://www.google.com'
 	])
 	->setEscape(false)
@@ -125,9 +125,9 @@ $Growl->setOptions([
 // Set a safe list of option keys. Can be an array of option keys, or a string.
 $Growl->setOptions([
 		'title' => 'Hello World',
-		'subtitle' => $definitelySafeSubtitle,
-		'message' => 'Sup bro?! I\'m all the way turnt up!',
-		'open' => $definitelySafeURL
+		'subtitle' => $safeSubtitle,
+		'message' => 'How are you doing?',
+		'open' => $safeURL
 	])
 	->setSafe(['subtitle', 'open'])
 	->execute();
