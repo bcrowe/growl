@@ -93,13 +93,13 @@ $Growl->setOption('title', 'Hello World')
 
 // or...
 
-$cmd = $Growl->setOptions([
+$Growl->setOptions([
 		'title' => 'Hello World',
 		'message' => 'How are you doing?',
 		'sticky' => true
 	])->buildCommand();
 
-exec($cmd);
+exec($Growl);
 ?>
 ```
 
