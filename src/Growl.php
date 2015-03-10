@@ -80,6 +80,17 @@ class Growl
     }
 
     /**
+     * Allow this object to be treated as a string in the case of using the
+     * buildCommand() method instead of executing the command.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->command;
+    }
+
+    /**
      * Executes the command on your machine.
      *
      * @codeCoverageIgnore
@@ -232,16 +243,5 @@ class Growl
                 return new GrowlNotifyWindowsBuilder;
             }
         }
-    }
-
-    /**
-     * Allow this object to be treated as a string in the case of using the
-     * buildCommand() method instead of executing the command.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->command;
     }
 }
