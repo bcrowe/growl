@@ -25,6 +25,13 @@ class Growl
     protected $builder = null;
 
     /**
+     * Stores the built command when treating this object like a string.
+     *
+     * @var string
+     */
+    protected $command = '';
+
+    /**
      * An array of options to use for building commands.
      *
      * @var array
@@ -100,11 +107,10 @@ class Growl
             $this->options = $this->escape($this->options);
         }
         if ($this->builder !== null) {
-            $command = $this->builder->build($this->options);
-            return $command;
+            $this->command = $this->builder->build($this->options);
         }
 
-        return '';
+        return $this;
     }
 
     /**
@@ -226,5 +232,16 @@ class Growl
                 return new GrowlNotifyWindowsBuilder;
             }
         }
+    }
+
+    /**
+     * Allow this object to be treated as a string in the case of using the
+     * buildCommand() method instead of executing the command.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->command;
     }
 }
