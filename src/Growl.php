@@ -101,6 +101,7 @@ class Growl
             $command = $this->builder->build($this->options);
             return $command;
         }
+
         return '';
     }
 
@@ -192,6 +193,7 @@ class Growl
                 $results[$key] = $value;
             }
         }
+
         return $results;
     }
 
