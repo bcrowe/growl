@@ -23,12 +23,12 @@ abstract class BuilderAbstract implements BuilderInterface
         if ($path === null) {
             return;
         }
-
         if (is_string($path)) {
             $this->path = $path;
-        } else {
-            throw new InvalidArgumentException('This constructor expects a string argument.');
+            return;
         }
+
+        throw new InvalidArgumentException('This constructor expects a string argument.');
     }
 
     /**
