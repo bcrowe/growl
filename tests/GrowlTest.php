@@ -102,4 +102,17 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     {
         $growl = $this->Growl->setSafe(true);
     }
+
+    public function testNoArgCtor()
+    {
+        $growl = new Growl();
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testGrowlCtorException()
+    {
+        $derp = new Growl([]);
+    }
 }
