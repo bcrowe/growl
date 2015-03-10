@@ -72,7 +72,7 @@ use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 
 $Growl = new Growl(new GrowlNotifyBuilder());
 
-// You can optionally set the path for a command by  passing in a string to the
+// You can optionally set the path for a command by passing in a string to the
 // Builder's constructor. For example:
 
 $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
