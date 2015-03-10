@@ -221,7 +221,8 @@ class Growl
      * program is installed.
      *
      * @codeCoverageIgnore
-     * @return BuilderAbstract A suitable Builder that was found on the system.
+     * @return BuilderAbstract A suitable Builder for a notification program
+     * that was found on the system.
      */
     protected function selectBuilder()
     {
