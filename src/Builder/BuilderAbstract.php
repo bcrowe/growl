@@ -28,13 +28,16 @@ abstract class BuilderAbstract implements BuilderInterface
             return;
         }
 
-        throw new InvalidArgumentException('This constructor expects a string argument.');
+        throw new InvalidArgumentException(
+            'This constructor expects a string argument.'
+        );
     }
 
     /**
      * Build the command string to be executed.
      *
-     * @param array $options An array of options to use for building the command.
+     * @param array $options An array of options to use for building the
+     * command.
      * @return string
      */
     abstract public function build($options);
