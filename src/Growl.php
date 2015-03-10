@@ -3,6 +3,10 @@
 namespace BryanCrowe\Growl;
 
 use BryanCrowe\Growl\Builder\BuilderAbstract;
+use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
+use BryanCrowe\Growl\Builder\GrowlNotifyWindowsBuilder;
+use BryanCrowe\Growl\Builder\NotifySendBuilder;
+use BryanCrowe\Growl\Builder\TerminalNotifierBuilder;
 use \InvalidArgumentException;
 
 /**
@@ -18,7 +22,7 @@ class Growl
      *
      * @var BuilderAbstract
      */
-    protected $builder;
+    protected $builder = null;
 
     /**
      * An array of options to use for building commands.
@@ -47,12 +51,23 @@ class Growl
      *
      * Accepts a Builder object to be used in building the command.
      *
-     * @param BuilderAbstract $builder
+     * @param $builder
      * @return void
      */
-    public function __construct(BuilderAbstract $builder)
+    public function __construct($builder = null)
     {
-        $this->builder = $builder;
+        if ($builder === null) {
+            $this->builder = $this->selectBuilder();
+            return;
+        }
+        if ($builder instanceof BuilderAbstract) {
+            $this->builder = $builder;
+            return;
+        }
+
+        throw new InvalidArgumentException(
+            'This constructor expects null or a BuilderAbstract instance.'
+        );
     }
 
     /**
@@ -66,9 +81,10 @@ class Growl
         if ($this->escape !== false) {
             $this->options = $this->escape($this->options);
         }
-        $command = $this->builder->build($this->options);
-
-        exec($command);
+        if ($this->builder !== null) {
+            $command = $this->builder->build($this->options);
+            exec($command);
+        }
     }
 
     /**
@@ -81,9 +97,11 @@ class Growl
         if ($this->escape !== false) {
             $this->options = $this->escape($this->options);
         }
-        $command = $this->builder->build($this->options);
-
-        return $command;
+        if ($this->builder !== null) {
+            $command = $this->builder->build($this->options);
+            return $command;
+        }
+        return '';
     }
 
     /**
@@ -175,5 +193,27 @@ class Growl
             }
         }
         return $results;
+    }
+
+    protected function selectBuilder()
+    {
+        if (PHP_OS === 'Darwin') {
+            if (exec('which growlnotify')) {
+                return new GrowlNotifyBuilder;
+            }
+            if (exec('which terminal-notifier')) {
+                return new TerminalNotifierBuilder;
+            }
+        }
+        if (PHP_OS === 'Linux') {
+            if (exec('which notify-send')) {
+                return new NotifySendBuilder;
+            }
+        }
+        if (PHP_OS === 'WINNT') {
+            if (exec('where growlnotify')) {
+                return new GrowlNotifyWindowsBuilder;
+            }
+        }
     }
 }
