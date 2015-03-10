@@ -53,6 +53,8 @@ class Growl
      *
      * @param $builder
      * @return void
+     * @throws InvalidArgumentException If not null or a BuilderAbstract
+     * instance.
      */
     public function __construct($builder = null)
     {
