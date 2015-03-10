@@ -197,6 +197,12 @@ class Growl
         return $results;
     }
 
+    /**
+     * Chooses a Builder to use depending on the operating system and which
+     * program is installed.
+     *
+     * @return BuilderAbstract A suitable Builder that was found on the system.
+     */
     protected function selectBuilder()
     {
         if (PHP_OS === 'Darwin') {
