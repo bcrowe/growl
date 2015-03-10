@@ -203,6 +203,7 @@ class Growl
      * Chooses a Builder to use depending on the operating system and which
      * program is installed.
      *
+     * @codeCoverageIgnore
      * @return BuilderAbstract A suitable Builder that was found on the system.
      */
     protected function selectBuilder()
