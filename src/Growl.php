@@ -7,7 +7,7 @@ use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 use BryanCrowe\Growl\Builder\GrowlNotifyWindowsBuilder;
 use BryanCrowe\Growl\Builder\NotifySendBuilder;
 use BryanCrowe\Growl\Builder\TerminalNotifierBuilder;
-use \InvalidArgumentException;
+use InvalidArgumentException;
 
 /**
  * This class accepts a Builder in its constructor to be used for building the
