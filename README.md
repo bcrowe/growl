@@ -67,9 +67,7 @@ a `Builder` for you:
 ```php
 <?php
 use BryanCrowe\Growl\Growl;
-
 // ...
-
 $Growl = new Growl();
 ?>
 ```
@@ -80,9 +78,7 @@ Or...
 <?php
 use BryanCrowe\Growl\Growl;
 use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
-
 // ...
-
 $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 ?>
 ```
@@ -99,7 +95,7 @@ $Growl->setOption('title', 'Hello World')
 	->setOption('sticky', true)
 	->execute();
 
-// or...
+// Or...
 
 $Growl
 	->setOptions([
