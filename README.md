@@ -60,8 +60,21 @@ $ composer require bcrowe/growl
 
 ## Usage
 
-Create a new instance of the `Growl` class and supply a `Builder` class in its
-construction:
+Create a new instance of the `Growl` class. You can optionally supply a
+`Builder` class and/or its path if you don't wish for the package to choose
+a `Builder` for you:
+
+```php
+<?php
+use BryanCrowe\Growl\Growl;
+
+// ...
+
+$Growl = new Growl();
+?>
+```
+
+Or...
 
 ```php
 <?php
@@ -69,11 +82,6 @@ use BryanCrowe\Growl\Growl;
 use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 
 // ...
-
-$Growl = new Growl(new GrowlNotifyBuilder());
-
-// You can optionally set the path for a command by passing in a string to the
-// Builder's constructor. For example:
 
 $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 ?>
@@ -93,11 +101,13 @@ $Growl->setOption('title', 'Hello World')
 
 // or...
 
-$Growl->setOptions([
+$Growl
+	->setOptions([
 		'title' => 'Hello World',
 		'message' => 'How are you doing?',
 		'sticky' => true
-	])->buildCommand();
+	])
+	->buildCommand();
 
 exec($Growl);
 ?>
@@ -110,8 +120,6 @@ while escaping is enabled.
 
 ```php
 <?php
-$Growl = new Growl(new TerminalNotifierBuilder());
-
 // Completely disable escaping...
 $Growl->setOptions([
 		'title' => 'Hello World',
