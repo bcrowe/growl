@@ -27,7 +27,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
                     ->setSafe('message')
                     ->buildCommand();
 
-        $this->assertSame($expected, $result);
+        $this->assertSame($expected, (string) $result);
     }
 
     public function testSet()
