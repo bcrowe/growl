@@ -110,8 +110,6 @@ while escaping is enabled.
 
 ```php
 <?php
-$Growl = new Growl(new TerminalNotifierBuilder());
-
 // Completely disable escaping...
 $Growl->setOptions([
 		'title' => 'Hello World',
