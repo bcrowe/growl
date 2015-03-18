@@ -21,7 +21,7 @@ class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
             'title' => 'Hello',
             'subtitle' => 'World',
             'message' => 'Welcome',
-            'appIcon' => 'Mail',
+            'image' => 'Mail',
             'contentImage' => 'http://www.example.com/hello.jpg',
             'open' => 'http://www.example.com'
         ];
