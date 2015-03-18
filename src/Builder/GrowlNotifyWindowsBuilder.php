@@ -25,19 +25,19 @@ class GrowlNotifyWindowsBuilder extends BuilderAbstract
         $command = $this->path;
 
         if (isset($options['title'])) {
-            $command .= ' /t:' . $options['title'];
+            $command .= " /t:{$options['title']}";
         }
         if (isset($options['appIcon'])) {
-            $command .= ' /ai:' . $options['appIcon'];
+            $command .= " /ai:{$options['appIcon']}";
         }
         if (isset($options['url'])) {
-            $command .= ' /cu:' . $options['url'];
+            $command .= " /cu:{$options['url']}";
         }
         if (isset($options['sticky']) && $options['sticky'] === true) {
             $command .= ' /s:true';
         }
         if (isset($options['message'])) {
-            $command .= ' ' . $options['message'];
+            $command .= " {$options['message']}";
         }
 
         return $command;
