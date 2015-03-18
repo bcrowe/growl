@@ -30,8 +30,13 @@ class GrowlNotifyBuilder extends BuilderAbstract
         if (isset($options['message'])) {
             $command .= " -m {$options['message']}";
         }
-        if (isset($options['appIcon'])) {
-            $command .= " -a {$options['appIcon']}";
+        if (isset($options['image'])) {
+            $pathInfo = pathinfo($options['image']);
+            if (isset($pathInfo['extension'])) {
+                $command .= " --image {$options['image']}";
+            } else {
+                $command .= " -a {$options['image']}";
+            }
         }
         if (isset($options['url'])) {
             $command .= " --url {$options['url']}";
