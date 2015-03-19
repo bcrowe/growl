@@ -19,12 +19,12 @@ class GrowlNotifyWindowsBuilderTest extends PHPUnit_Framework_TestCase
     {
         $options = [
             'title' => 'Hello',
-            'image' => 'Mail',
+            'image' => 'C:\okay.jpg',
             'url' => 'http://www.example.com',
             'message' => 'World',
             'sticky' => true
         ];
-        $expected = 'growlnotify /t:Hello /i:Mail /cu:' .
+        $expected = 'growlnotify /t:Hello /i:C:\okay.jpg /cu:' .
                     'http://www.example.com /s:true World';
         $result = $this->GrowlNotifyWindowsBuilder->build($options);
         $this->assertSame($expected, $result);
