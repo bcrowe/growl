@@ -61,8 +61,8 @@ $ composer require bcrowe/growl
 ## Usage
 
 Create a new instance of the `Growl` class. You can optionally supply a
-`Builder` class and/or its path if you don't wish for the package to choose
-a `Builder` for you:
+`Builder` class and its path if you don't wish for the package to choose
+a notification program based on your system:
 
 ```php
 <?php
