@@ -91,20 +91,20 @@ After setting options, the last thing to do is build the command with
 ```php
 <?php
 (new Growl)
-	->setOption('title', 'Hello World')
-	->setOption('message', 'How are you doing?')
-	->setOption('sticky', true)
-	->execute();
+    ->setOption('title', 'Hello World')
+    ->setOption('message', 'How are you doing?')
+    ->setOption('sticky', true)
+    ->execute();
 
 // Or...
 
 $Growl = new Growl;
 $Growl->setOptions([
-		'title' => 'Hello World',
-		'message' => 'How are you doing?',
-		'sticky' => true
-	])
-	->buildCommand();
+        'title' => 'Hello World',
+        'message' => 'How are you doing?',
+        'sticky' => true
+    ])
+    ->buildCommand();
 
 exec($Growl);
 ?>
@@ -119,23 +119,23 @@ while escaping is enabled.
 <?php
 // Completely disable escaping...
 $Growl->setOptions([
-		'title' => 'Hello World',
-		'subtitle' => 'Earth',
-		'message' => 'How are you doing?',
-		'open' => 'http://www.google.com'
-	])
-	->setEscape(false)
-	->execute();
+        'title' => 'Hello World',
+        'subtitle' => 'Earth',
+        'message' => 'How are you doing?',
+        'open' => 'http://www.google.com'
+    ])
+    ->setEscape(false)
+    ->execute();
 
 // Set a safe list of option keys. Can be an array of option keys, or a string.
 $Growl->setOptions([
-		'title' => 'Hello World',
-		'subtitle' => $safeSubtitle,
-		'message' => 'How are you doing?',
-		'open' => $safeURL
-	])
-	->setSafe(['subtitle', 'open'])
-	->execute();
+        'title' => 'Hello World',
+        'subtitle' => $safeSubtitle,
+        'message' => 'How are you doing?',
+        'open' => $safeURL
+    ])
+    ->setSafe(['subtitle', 'open'])
+    ->execute();
 ?>
 ```
 
