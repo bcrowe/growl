@@ -152,8 +152,9 @@ Available option keys:
 * **title** *string* The title of the growl.
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
-* **image** *string* A name of an application's icon to use (Darwin), the path
-to a file on the system (Darwin & Windows), or a URL to an image (Windows).
+* **image** *string* A name of an application's icon to use, e.g., "Mail"
+(Darwin), the path to a file on the system (Darwin & Windows), or a URL to an
+image (Windows).
 * **url** *string* A URL to open if the growl is clicked.
 
 #### TerminalNotifierBuilder
