@@ -152,7 +152,8 @@ Available option keys:
 * **title** *string* The title of the growl.
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
-* **appIcon** *string* An application icon to use.
+* **image** *string* A name of an application's icon to use (Darwin), the path
+to a file on the system (Darwin & Windows), or a URL to an image (Windows).
 * **url** *string* A URL to open if the growl is clicked.
 
 #### TerminalNotifierBuilder
@@ -164,7 +165,7 @@ Available option keys:
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
-* **appIcon** *string* A URL to an image to be used as the icon. *(Mavericks+ only)*
+* **image** *string* A URL to an image to be used as the icon. *(Mavericks+ only)*
 * **contentImage** *string* A URL to an image to be in the notification body. *(Mavericks+ only)*
 * **open** *string* A URL to go to when the notification is clicked.
 
