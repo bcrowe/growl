@@ -122,7 +122,7 @@ $Growl->setOptions([
         'title' => 'Hello World',
         'subtitle' => 'Earth',
         'message' => 'How are you doing?',
-        'open' => 'http://www.google.com'
+        'url' => 'http://www.google.com'
     ])
     ->setEscape(false)
     ->execute();
@@ -132,7 +132,7 @@ $Growl->setOptions([
         'title' => 'Hello World',
         'subtitle' => $safeSubtitle,
         'message' => 'How are you doing?',
-        'open' => $safeURL
+        'url' => $safeURL
     ])
     ->setSafe(['subtitle', 'open'])
     ->execute();

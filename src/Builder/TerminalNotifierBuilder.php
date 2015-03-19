@@ -39,8 +39,8 @@ class TerminalNotifierBuilder extends BuilderAbstract
         if (isset($options['contentImage'])) {
             $command .= " -contentImage {$options['contentImage']}";
         }
-        if (isset($options['open'])) {
-            $command .= " -open {$options['open']}";
+        if (isset($options['url'])) {
+            $command .= " -open {$options['url']}";
         }
 
         return $command;

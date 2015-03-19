@@ -23,7 +23,7 @@ class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
             'message' => 'Welcome',
             'image' => 'http://www.example.com/example.jpg',
             'contentImage' => 'http://www.example.com/hello.jpg',
-            'open' => 'http://www.example.com'
+            'url' => 'http://www.example.com'
         ];
         $expected = 'terminal-notifier -title Hello -subtitle World -message Welcome' .
                     ' -appIcon http://www.example.com/example.jpg' .
