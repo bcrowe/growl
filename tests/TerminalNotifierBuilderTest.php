@@ -21,12 +21,13 @@ class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
             'title' => 'Hello',
             'subtitle' => 'World',
             'message' => 'Welcome',
-            'image' => 'Mail',
+            'image' => 'http://www.example.com/example.jpg',
             'contentImage' => 'http://www.example.com/hello.jpg',
             'open' => 'http://www.example.com'
         ];
         $expected = 'terminal-notifier -title Hello -subtitle World -message Welcome' .
-                    ' -appIcon Mail -contentImage http://www.example.com/hello.jpg' .
+                    ' -appIcon http://www.example.com/example.jpg' .
+                    ' -contentImage http://www.example.com/hello.jpg' .
                     ' -open http://www.example.com';
         $result = $this->TerminalNotifierBuilder->build($options);
         $this->assertSame($expected, $result);
