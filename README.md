@@ -90,11 +90,11 @@ After setting options, the last thing to do is build the command with
 
 ```php
 <?php
-	(new Growl)
-		->setOption('title', 'Hello World')
-		->setOption('message', 'How are you doing?')
-		->setOption('sticky', true)
-		->execute();
+(new Growl)
+	->setOption('title', 'Hello World')
+	->setOption('message', 'How are you doing?')
+	->setOption('sticky', true)
+	->execute();
 
 // Or...
 
