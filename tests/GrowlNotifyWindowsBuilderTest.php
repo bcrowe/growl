@@ -6,7 +6,7 @@ class GrowlNotifyWindowsBuilderTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->GrowlNotifyWindowsBuilder = new GrowlNotifyWindowsBuilder();
+        $this->GrowlNotifyWindowsBuilder = new GrowlNotifyWindowsBuilder;
     }
 
     public function tearDown()

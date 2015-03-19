@@ -6,7 +6,7 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->GrowlNotifyBuilder = new GrowlNotifyBuilder();
+        $this->GrowlNotifyBuilder = new GrowlNotifyBuilder;
         $this->GrowlNotifyBuilderAliased = new GrowlNotifyBuilder('grwl');
     }
 

@@ -6,7 +6,7 @@ class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->NotifySendBuilder = new NotifySendBuilder();
+        $this->NotifySendBuilder = new NotifySendBuilder;
     }
 
     public function tearDown()

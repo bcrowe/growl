@@ -6,7 +6,7 @@ class TerminalNotifierBuilderTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->TerminalNotifierBuilder = new TerminalNotifierBuilder();
+        $this->TerminalNotifierBuilder = new TerminalNotifierBuilder;
     }
 
     public function tearDown()
