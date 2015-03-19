@@ -68,7 +68,7 @@ a `Builder` for you:
 <?php
 use BryanCrowe\Growl\Growl;
 // ...
-$Growl = new Growl();
+$Growl = new Growl;
 ?>
 ```
 
@@ -90,15 +90,16 @@ After setting options, the last thing to do is build the command with
 
 ```php
 <?php
-$Growl->setOption('title', 'Hello World')
-	->setOption('message', 'How are you doing?')
-	->setOption('sticky', true)
-	->execute();
+	(new Growl)
+		->setOption('title', 'Hello World')
+		->setOption('message', 'How are you doing?')
+		->setOption('sticky', true)
+		->execute();
 
 // Or...
 
-$Growl
-	->setOptions([
+$Growl = new Growl;
+$Growl->setOptions([
 		'title' => 'Hello World',
 		'message' => 'How are you doing?',
 		'sticky' => true
