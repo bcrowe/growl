@@ -6,7 +6,7 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->GrowlNotifyBuilder = new GrowlNotifyBuilder();
+        $this->GrowlNotifyBuilder = new GrowlNotifyBuilder;
         $this->GrowlNotifyBuilderAliased = new GrowlNotifyBuilder('grwl');
     }
 
@@ -22,7 +22,7 @@ class GrowlNotifyBuilderTest extends PHPUnit_Framework_TestCase
         $options = [
             'title' => 'Hello',
             'message' => 'World',
-            'appIcon' => 'Mail',
+            'image' => 'Mail',
             'url' => 'http://www.example.com',
             'sticky' => true
         ];

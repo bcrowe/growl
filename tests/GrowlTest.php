@@ -7,7 +7,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->Growl = new Growl(new GrowlNotifyBuilder());
+        $this->Growl = new Growl(new GrowlNotifyBuilder);
     }
 
     public function tearDown()
@@ -27,7 +27,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
                     ->setSafe('message')
                     ->buildCommand();
 
-        $this->assertSame($expected, $result);
+        $this->assertSame($expected, (string) $result);
     }
 
     public function testSet()
@@ -57,7 +57,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
             'hello' => '\'world\''
         ];
 
-        $growl = new Growl(new GrowlNotifyBuilder());
+        $growl = new Growl(new GrowlNotifyBuilder);
         $growlReflection = new ReflectionClass($growl);
         $method = $growlReflection->getMethod('escape');
         $method->setAccessible(true);
@@ -69,7 +69,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
             'something' => 'else'
         ];
 
-        $growl = new Growl(new GrowlNotifyBuilder());
+        $growl = new Growl(new GrowlNotifyBuilder);
         $growl->setSafe('something');
         $growlReflection = new ReflectionClass($growl);
         $method = $growlReflection->getMethod('escape');
@@ -101,5 +101,18 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     public function testSetSafeException()
     {
         $growl = $this->Growl->setSafe(true);
+    }
+
+    public function testNoArgCtor()
+    {
+        $growl = new Growl;
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testGrowlCtorException()
+    {
+        $derp = new Growl([]);
     }
 }

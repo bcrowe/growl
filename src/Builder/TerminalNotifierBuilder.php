@@ -25,22 +25,22 @@ class TerminalNotifierBuilder extends BuilderAbstract
         $command = $this->path;
 
         if (isset($options['title'])) {
-            $command .= ' -title ' . $options['title'];
+            $command .= " -title {$options['title']}";
         }
         if (isset($options['subtitle'])) {
-            $command .= ' -subtitle ' . $options['subtitle'];
+            $command .= " -subtitle {$options['subtitle']}";
         }
         if (isset($options['message'])) {
-            $command .= ' -message ' . $options['message'];
+            $command .= " -message {$options['message']}";
         }
-        if (isset($options['appIcon'])) {
-            $command .= ' -appIcon ' . $options['appIcon'];
+        if (isset($options['image'])) {
+            $command .= " -appIcon {$options['image']}";
         }
         if (isset($options['contentImage'])) {
-            $command .= ' -contentImage ' . $options['contentImage'];
+            $command .= " -contentImage {$options['contentImage']}";
         }
-        if (isset($options['open'])) {
-            $command .= ' -open ' . $options['open'];
+        if (isset($options['url'])) {
+            $command .= " -open {$options['url']}";
         }
 
         return $command;

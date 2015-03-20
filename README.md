@@ -60,21 +60,25 @@ $ composer require bcrowe/growl
 
 ## Usage
 
-Create a new instance of the `Growl` class and supply a `Builder` class in its
-construction:
+Create a new instance of the `Growl` class. You can optionally supply a
+`Builder` class and its path if you don't wish for the package to choose
+a notification program based on your system:
+
+```php
+<?php
+use BryanCrowe\Growl\Growl;
+// ...
+$Growl = new Growl;
+?>
+```
+
+Or...
 
 ```php
 <?php
 use BryanCrowe\Growl\Growl;
 use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
-
 // ...
-
-$Growl = new Growl(new GrowlNotifyBuilder());
-
-// You can optionally set the path for a command by passing in a string to the
-// Builder's constructor. For example:
-
 $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 ?>
 ```
@@ -86,20 +90,23 @@ After setting options, the last thing to do is build the command with
 
 ```php
 <?php
-$Growl->setOption('title', 'Hello World')
-	->setOption('message', 'How are you doing?')
-	->setOption('sticky', true)
-	->execute();
+(new Growl)
+    ->setOption('title', 'Hello World')
+    ->setOption('message', 'How are you doing?')
+    ->setOption('sticky', true)
+    ->execute();
 
-// or...
+// Or...
 
-$cmd = $Growl->setOptions([
-		'title' => 'Hello World',
-		'message' => 'How are you doing?',
-		'sticky' => true
-	])->buildCommand();
+$Growl = new Growl;
+$Growl->setOptions([
+        'title' => 'Hello World',
+        'message' => 'How are you doing?',
+        'sticky' => true
+    ])
+    ->buildCommand();
 
-exec($cmd);
+exec($Growl);
 ?>
 ```
 
@@ -112,23 +119,23 @@ while escaping is enabled.
 <?php
 // Completely disable escaping...
 $Growl->setOptions([
-		'title' => 'Hello World',
-		'subtitle' => 'Earth',
-		'message' => 'How are you doing?',
-		'open' => 'http://www.google.com'
-	])
-	->setEscape(false)
-	->execute();
+        'title' => 'Hello World',
+        'subtitle' => 'Earth',
+        'message' => 'How are you doing?',
+        'url' => 'http://www.google.com'
+    ])
+    ->setEscape(false)
+    ->execute();
 
 // Set a safe list of option keys. Can be an array of option keys, or a string.
 $Growl->setOptions([
-		'title' => 'Hello World',
-		'subtitle' => $safeSubtitle,
-		'message' => 'How are you doing?',
-		'open' => $safeURL
-	])
-	->setSafe(['subtitle', 'open'])
-	->execute();
+        'title' => 'Hello World',
+        'subtitle' => $safeSubtitle,
+        'message' => 'How are you doing?',
+        'url' => $safeURL
+    ])
+    ->setSafe(['subtitle', 'open'])
+    ->execute();
 ?>
 ```
 
@@ -145,7 +152,9 @@ Available option keys:
 * **title** *string* The title of the growl.
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
-* **appIcon** *string* An application icon to use.
+* **image** *string* A name of an application's icon to use, e.g., "Mail"
+(Darwin), the path to a file on the system (Darwin & Windows), or a URL to an
+image (Windows).
 * **url** *string* A URL to open if the growl is clicked.
 
 #### TerminalNotifierBuilder
@@ -157,9 +166,9 @@ Available option keys:
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
-* **appIcon** *string* A URL to an image to be used as the icon. *(Mavericks+ only)*
+* **image** *string* A URL to an image to be used as the icon. *(Mavericks+ only)*
 * **contentImage** *string* A URL to an image to be in the notification body. *(Mavericks+ only)*
-* **open** *string* A URL to go to when the notification is clicked.
+* **url** *string* A URL to go to when the notification is clicked.
 
 #### NotifySendBuilder
 

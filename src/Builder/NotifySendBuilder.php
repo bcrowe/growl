@@ -25,10 +25,10 @@ class NotifySendBuilder extends BuilderAbstract
         $command = $this->path;
 
         if (isset($options['title'])) {
-            $command .= ' ' . $options['title'];
+            $command .= " {$options['title']}";
         }
         if (isset($options['message'])) {
-            $command .= ' ' . $options['message'];
+            $command .= " {$options['message']}";
         }
         if (isset($options['sticky']) && $options['sticky'] === true) {
             $command .= ' -t 0';

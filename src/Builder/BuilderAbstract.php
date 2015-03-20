@@ -2,7 +2,7 @@
 
 namespace BryanCrowe\Growl\Builder;
 
-use \InvalidARgumentException;
+use InvalidArgumentException;
 
 abstract class BuilderAbstract implements BuilderInterface
 {
@@ -23,18 +23,21 @@ abstract class BuilderAbstract implements BuilderInterface
         if ($path === null) {
             return;
         }
-
         if (is_string($path)) {
             $this->path = $path;
-        } else {
-            throw new InvalidArgumentException('This constructor expects a string argument.');
+            return;
         }
+
+        throw new InvalidArgumentException(
+            'This constructor expects a string argument.'
+        );
     }
 
     /**
      * Build the command string to be executed.
      *
-     * @param array $options An array of options to use for building the command.
+     * @param array $options An array of options to use for building the
+     * command.
      * @return string
      */
     abstract public function build($options);
