@@ -74,9 +74,8 @@ $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 ```
 
 Now, you can set key/value options for a `Builder` to use with the `setOption()`
-or `setOptions()` methods to set option key/value pairs. After setting options,
-the last thing to do is build the command with
-`buildCommand()` or run it with `execute()`:
+or `setOptions()` methods. After setting options, the last thing to do is build
+the command with `buildCommand()` or run it with `execute()`:
 
 ```php
 <?php
