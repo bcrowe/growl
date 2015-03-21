@@ -16,39 +16,33 @@ PHP 5.4+ and one of the following notification programs:
 
 ### OS X
 
-* [Growl](http://growl.info/downloads)
-* [growlnotify](http://growl.info/downloads#generaldownloads)
+#### Growl & GrowlNotify
 
-... Or install the `terminal-notifier` gem:
+* [Growl](http://growl.info/downloads)
+* [GrowlNotify](http://growl.info/downloads#generaldownloads)
+
+#### terminal-notifier
 
 ```bash
 $ gem install terminal-notifier
-```
-or...
-```bash
 $ brew install terminal-notifier
 ```
 
 ### Linux
 
-Install `notify-send`.
-
-#### Debian/Ubuntu
+#### notify-send
 
 ``` bash
 $ apt-get install libnotify-bin
-```
-
-#### RedHat/Fedora
-
-``` bash
 $ yum install libnotify
 ```
 
 ### Windows
 
-* [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
-* [growlnotify for Windows](http://www.growlforwindows.com/gfw/help/growlnotify.aspx)
+#### Growl & GrowlNotify
+
+* [Growl](http://www.growlforwindows.com/gfw/default.aspx)
+* [GrowlNotify](http://www.growlforwindows.com/gfw/help/growlnotify.aspx)
 
 ## Installation
 
@@ -67,25 +61,21 @@ a notification program based on your system:
 ```php
 <?php
 use BryanCrowe\Growl\Growl;
-// ...
+
 $Growl = new Growl;
-?>
-```
 
-Or...
+// Or...
 
-```php
-<?php
 use BryanCrowe\Growl\Growl;
 use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
-// ...
+
 $Growl = new Growl(new GrowlNotifyBuilder('/usr/local/bin/growlnotify'));
 ?>
 ```
 
-Then, you can set key/value options for a `Builder` to use with the `Growl`
-class' `setOption()` or `setOptions()` methods to set option key/value pairs.
-After setting options, the last thing to do is build the command with
+Now, you can set key/value options for a `Builder` to use with the `setOption()`
+or `setOptions()` methods to set option key/value pairs. After setting options,
+the last thing to do is build the command with
 `buildCommand()` or run it with `execute()`:
 
 ```php
@@ -112,29 +102,29 @@ exec($Growl);
 
 By default, this package will escape all command arguments that are supplied as
 options. If you want to change this, there are two options. Either completely
-disable escaping, or provide a list of safe option keys that will be bypassed
+disable escaping, or provide a safe-list of option keys that will be bypassed
 while escaping is enabled.
 
 ```php
 <?php
 // Completely disable escaping...
-$Growl->setOptions([
+(new Growl)
+    ->setOptions([
         'title' => 'Hello World',
-        'subtitle' => 'Earth',
         'message' => 'How are you doing?',
         'url' => 'http://www.google.com'
     ])
     ->setEscape(false)
     ->execute();
 
-// Set a safe list of option keys. Can be an array of option keys, or a string.
-$Growl->setOptions([
+// Set a safe-list of option keys. Can be an array of option keys, or a string.
+(new Growl)
+    ->setOptions([
         'title' => 'Hello World',
-        'subtitle' => $safeSubtitle,
-        'message' => 'How are you doing?',
-        'url' => $safeURL
+        'message' => $mySafeMessage,
+        'url' => $mySafeURL
     ])
-    ->setSafe(['subtitle', 'open'])
+    ->setSafe(['message', 'url'])
     ->execute();
 ?>
 ```
@@ -153,8 +143,8 @@ Available option keys:
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
 * **image** *string* A name of an application's icon to use, e.g., "Mail"
-(Darwin), the path to a file on the system (Darwin & Windows), or a URL to an
-image (Windows).
+(OS X only), the path to a file on the system (OS X & Windows), or a URL to an
+image (Windows only).
 * **url** *string* A URL to open if the growl is clicked.
 
 #### TerminalNotifierBuilder
@@ -166,8 +156,8 @@ Available option keys:
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
-* **image** *string* A URL to an image to be used as the icon. *(Mavericks+ only)*
-* **contentImage** *string* A URL to an image to be in the notification body. *(Mavericks+ only)*
+* **image** *string* A URL to an image to be used as the icon. *(OS X Mavericks+ only)*
+* **contentImage** *string* A URL to an image to be in the notification body. *(OS X Mavericks+ only)*
 * **url** *string* A URL to go to when the notification is clicked.
 
 #### NotifySendBuilder
