@@ -44,6 +44,10 @@ $ yum install libnotify
 * [Growl](http://www.growlforwindows.com/gfw/default.aspx)
 * [GrowlNotify](http://www.growlforwindows.com/gfw/help/growlnotify.aspx)
 
+#### Snarl
+
+* [Snarl](http://snarl.fullphat.net/content/download/)
+
 ## Installation
 
 ### Composer
