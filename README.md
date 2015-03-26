@@ -130,8 +130,6 @@ while escaping is enabled.
 
 ### Builders
 
-There are a few available `Builder`s that come with this package...
-
 #### GrowlNotifyBuilder & GrowlNotifyWindowsBuilder
 
 Builds commands for `growlnotify`.
