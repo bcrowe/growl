@@ -1,6 +1,12 @@
 ## 2.0.0 - 2015-03-21
 
+- Stable 2.0.0 release.
+
 ## 2.0.0-alpha1 - 2015-03-19
+
+- Rename BuilderAbstract's '$command' property to '$path'.
+- Add auto-selecting of builders based on the system and available builders.
+- Add __toString() method to Growl class.
 
 ## 1.2.0 - 2015-02-13
 
