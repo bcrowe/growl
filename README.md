@@ -134,8 +134,6 @@ while escaping is enabled.
 
 ### Builders
 
-There are a few available `Builder`s that come with this package...
-
 #### GrowlNotifyBuilder & GrowlNotifyWindowsBuilder
 
 Builds commands for `growlnotify`.
@@ -146,8 +144,8 @@ Available option keys:
 * **message** *string* The growl's body.
 * **sticky** *boolean* Whether or not make the growl stick until closed.
 * **image** *string* A name of an application's icon to use, e.g., "Mail"
-(OS X only), the path to a file on the system (OS X & Windows), or a URL to an
-image (Windows only).
+*(OS X only)*, the path to a file on the system *(OS X & Windows)*, or a URL to
+an image *(Windows only)*.
 * **url** *string* A URL to open if the growl is clicked.
 
 #### TerminalNotifierBuilder

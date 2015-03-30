@@ -10,10 +10,10 @@ use BryanCrowe\Growl\Builder\TerminalNotifierBuilder;
 use InvalidArgumentException;
 
 /**
- * This class accepts a Builder in its constructor to be used for building the
- * growl/notification command. It contains various methods to set command
- * options, toggling escaping, whitelisting fields, and finally executing the
- * command.
+ * This class optionally accepts a Builder in its constructor to be used for
+ * building the growl/notification command. It contains various methods to set
+ * command options, toggling escaping, whitelisting fields, and finally
+ * building and/or executing the command.
  */
 class Growl
 {
