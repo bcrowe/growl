@@ -147,7 +147,7 @@ class Growl
      */
     public function setOptions(array $options)
     {
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $this->options[$key] = $value;
         }
 
@@ -185,7 +185,7 @@ class Growl
         }
 
         if (is_array($options)) {
-            foreach($options as $key => $value) {
+            foreach ($options as $key => $value) {
                 $this->safe[] = $value;
             }
             return $this;
