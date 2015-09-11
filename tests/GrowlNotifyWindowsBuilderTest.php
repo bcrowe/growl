@@ -1,7 +1,9 @@
 <?php
+namespace BryanCrowe\Growl\Test;
+
 use BryanCrowe\Growl\Builder\GrowlNotifyWindowsBuilder;
 
-class GrowlNotifyWindowsBuilderTest extends PHPUnit_Framework_TestCase
+class GrowlNotifyWindowsBuilderTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {

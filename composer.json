@@ -24,5 +24,11 @@
         "psr-4": {
             "BryanCrowe\\Growl\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BryanCrowe\\Growl\\": "src",
+            "BryanCrowe\\Growl\\Test\\": "tests"
+        }
     }
 }

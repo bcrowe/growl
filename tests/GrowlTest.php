@@ -1,8 +1,10 @@
 <?php
+namespace BryanCrowe\Growl\Test;
+
 use BryanCrowe\Growl\Growl;
 use BryanCrowe\Growl\Builder\GrowlNotifyBuilder;
 
-class GrowlTest extends PHPUnit_Framework_TestCase
+class GrowlTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
@@ -41,14 +43,14 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         $result = $this->Growl->setOption('hello', 'world')
             ->setOption('title', 'Hey')
             ->setOption('message', 'Whatsup?');
-        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
+        $this->assertEquals($expected, \PHPUnit_Framework_Assert::readAttribute($result, 'options'));
 
         $result = $this->Growl->setOptions([
             'hello' => 'world',
             'title' => 'Hey',
             'message' => 'Whatsup?'
         ]);
-        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($result, 'options'));
+        $this->assertEquals($expected, \PHPUnit_Framework_Assert::readAttribute($result, 'options'));
     }
 
     public function testEscape()
@@ -58,7 +60,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
         ];
 
         $growl = new Growl(new GrowlNotifyBuilder);
-        $growlReflection = new ReflectionClass($growl);
+        $growlReflection = new \ReflectionClass($growl);
         $method = $growlReflection->getMethod('escape');
         $method->setAccessible(true);
 
@@ -71,7 +73,7 @@ class GrowlTest extends PHPUnit_Framework_TestCase
 
         $growl = new Growl(new GrowlNotifyBuilder);
         $growl->setSafe('something');
-        $growlReflection = new ReflectionClass($growl);
+        $growlReflection = new \ReflectionClass($growl);
         $method = $growlReflection->getMethod('escape');
         $method->setAccessible(true);
 
@@ -81,18 +83,18 @@ class GrowlTest extends PHPUnit_Framework_TestCase
     public function testSetEscape()
     {
         $growl = $this->Growl->setEscape(false);
-        $this->assertFalse(PHPUnit_Framework_Assert::readAttribute($growl, 'escape'));
+        $this->assertFalse(\PHPUnit_Framework_Assert::readAttribute($growl, 'escape'));
     }
 
     public function testSetSafe()
     {
         $expected = ['hello'];
         $growl = $this->Growl->setSafe('hello');
-        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
+        $this->assertEquals($expected, \PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
 
         $expected = ['hello', 'world', 'again'];
         $growl->setSafe(['world', 'again']);
-        $this->assertEquals($expected, PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
+        $this->assertEquals($expected, \PHPUnit_Framework_Assert::readAttribute($growl, 'safe'));
     }
 
     /**

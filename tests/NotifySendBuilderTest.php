@@ -1,7 +1,9 @@
 <?php
+namespace BryanCrowe\Growl\Test;
+
 use BryanCrowe\Growl\Builder\NotifySendBuilder;
 
-class NotifySendBuilderTest extends PHPUnit_Framework_TestCase
+class NotifySendBuilderTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
