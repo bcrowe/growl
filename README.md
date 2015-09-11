@@ -1,11 +1,11 @@
 # Growl Notifications with PHP
 
-[![Author](http://img.shields.io/badge/author-@_beakman-blue.svg?style=flat-square)](https://twitter.com/_beakman)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bcrowe/cakephp-api-pagination.svg?style=flat-square)](https://packagist.org/packages/bcrowe/cakephp-api-pagination)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square)](https://travis-ci.org/bcrowe/growl)
-[![Code Coverage](https://img.shields.io/coveralls/bcrowe/growl.svg?style=flat-square)](https://coveralls.io/r/bcrowe/growl)
-[![Total Downloads](https://img.shields.io/packagist/dt/bcrowe/growl.svg?style=flat-square)](https://packagist.org/packages/bcrowe/growl)
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
 
 This package aims to provide an easy and fluent interface to construct and
 execute commands for various desktop notification programs.
@@ -208,3 +208,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+[ico-version]: https://img.shields.io/packagist/v/bcrowe/growl.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/bcrowe/growl/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/bcrowe/growl.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/bcrowe/growl.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/bcrowe/growl.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/bcrowe/growl
+[link-travis]: https://travis-ci.org/bcrowe/growl
+[link-scrutinizer]: https://scrutinizer-ci.com/g/bcrowe/growl/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/bcrowe/growl
+[link-downloads]: https://packagist.org/packages/bcrowe/growl
+[link-author]: https://github.com/bcrowe
+[link-contributors]: ../../contributors
