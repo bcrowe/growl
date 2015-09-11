@@ -59,7 +59,6 @@ class Growl
      * Accepts a Builder object to be used in building the command.
      *
      * @param $builder
-     * @return void
      * @throws InvalidArgumentException If not null or a BuilderAbstract
      * instance.
      */
