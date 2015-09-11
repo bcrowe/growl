@@ -1,3 +1,10 @@
+## 2.0.1 - 2015-09-10
+
+- Add coding standards build to Travis.
+- Add config file for Scrutinizer.
+- Updated badges in README to use Scrutinizer, etc.
+- Fix namespacing in tests.
+
 ## 2.0.0 - 2015-03-21
 
 - Stable 2.0.0 release.
