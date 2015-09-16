@@ -185,6 +185,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 If you discover any security related issues, please email bryan@bryan-crowe.com instead of using the issue tracker.
 
+## Credits
+
+- [Bryan Crowe][link-author]
+- [All Contributors][link-contributors]
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
