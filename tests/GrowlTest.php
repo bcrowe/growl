@@ -115,6 +115,6 @@ class GrowlTest extends \PHPUnit_Framework_TestCase
      */
     public function testGrowlCtorException()
     {
-        $derp = new Growl([]);
+        $growl = new Growl([]);
     }
 }
