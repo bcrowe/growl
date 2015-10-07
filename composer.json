@@ -30,5 +30,8 @@
             "BryanCrowe\\Growl\\": "src",
             "BryanCrowe\\Growl\\Test\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
