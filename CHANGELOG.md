@@ -1,3 +1,10 @@
+## 2.0.2 - 2015-10-19
+
+- Added CONDUCT.md
+- Updates for README file.
+- Allow running tests through composer script.
+- Updated a silly var name in test.
+
 ## 2.0.1 - 2015-09-10
 
 - Add coding standards build to Travis.
