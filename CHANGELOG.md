@@ -1,3 +1,7 @@
+# Changelog
+
+All notable changes to `growl` will be documented in this file.
+
 ## 2.0.2 - 2015-10-19
 
 - Added CONDUCT.md
