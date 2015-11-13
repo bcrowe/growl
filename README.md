@@ -153,8 +153,10 @@ Available option keys:
 * **title** *string* The title of the notification.
 * **subtitle** *string* The notification's subtitle.
 * **message** *string* The notification's body.
-* **image** *string* A URL to an image to be used as the icon. *(OS X Mavericks+ only)*
-* **contentImage** *string* A URL to an image to be in the notification body. *(OS X Mavericks+ only)*
+* **image** *string* A URL to an image to be used as the icon.
+*(OS X Mavericks+ only)*
+* **contentImage** *string* A URL to an image to be in the notification body.
+*(OS X Mavericks+ only)*
 * **url** *string* A URL to go to when the notification is clicked.
 
 #### NotifySendBuilder
@@ -169,7 +171,8 @@ Available option keys:
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed
+recently.
 
 ## Testing
 
@@ -183,7 +186,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email bryan@bryan-crowe.com instead of using the issue tracker.
+If you discover any security related issues, please email bryan@bryan-crowe.com
+instead of using the issue tracker.
 
 ## Credits
 
@@ -192,7 +196,8 @@ If you discover any security related issues, please email bryan@bryan-crowe.com 
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more
+information.
 
 [ico-version]: https://img.shields.io/packagist/v/bcrowe/growl.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
