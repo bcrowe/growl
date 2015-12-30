@@ -16,6 +16,7 @@ abstract class BuilderAbstract implements BuilderInterface
     /**
      * Constructor. Offers an opportunity to set a notifier's alias/path.
      *
+     * @param string|null $path The path to the notifier's CLI.
      * @throws InvalidArgumentException If the argument isn't a string.
      */
     public function __construct($path = null)
