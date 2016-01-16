@@ -2,6 +2,9 @@
 
 namespace BryanCrowe\Growl\Builder;
 
+/**
+ * Builder interface
+ */
 interface BuilderInterface
 {
     /**
