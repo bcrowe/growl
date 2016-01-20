@@ -20,7 +20,7 @@ class Growl
     /**
      * The Builder to use for building the command.
      *
-     * @var BuilderAbstract
+     * @var \BryanCrowe\Growl\Builder\BuilderAbstract
      */
     protected $builder = null;
 
@@ -58,8 +58,8 @@ class Growl
      *
      * Accepts a Builder object to be used in building the command.
      *
-     * @param $builder
-     * @throws InvalidArgumentException If not null or a BuilderAbstract
+     * @param \BryanCrowe\Growl\Builder\BuilderAbstract $builder
+     * @throws \InvalidArgumentException If not null or a BuilderAbstract
      * instance.
      */
     public function __construct($builder = null)
@@ -172,7 +172,7 @@ class Growl
      *
      * @param mixed A string or array of option names assumed to be safe from
      * escaping.
-     * @throws InvalidArgumentException If the method argument isn't a string or
+     * @throws \InvalidArgumentException If the method argument isn't a string or
      * array.
      * @return $this
      */
@@ -220,8 +220,8 @@ class Growl
      * program is installed.
      *
      * @codeCoverageIgnore
-     * @return BuilderAbstract A suitable Builder for a notification program
-     * that was found on the system.
+     * @return \BryanCrowe\Growl\Builder\BuilderAbstract A suitable Builder for
+     * a notification program that was found on the system.
      */
     protected function selectBuilder()
     {
